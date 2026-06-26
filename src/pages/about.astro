@@ -1,0 +1,1126 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Colophon from "../components/Colophon.astro";
+
+const route = [
+  {
+    year: "2018",
+    title: "Graphic designer, freelance",
+    desc: "Fiverr — wedding invitations and video stationery for international clients. I kept loyal clients off-platform for over a year: my first lesson in why service quality compounds.",
+  },
+  {
+    year: "2021",
+    title: "A four-frame Figma file",
+    desc: "Pregnant with my son, I opened Figma for the first time and designed four frames of a shopping list app. I knew nothing about UX, and put it down when he was born.",
+  },
+  {
+    year: "2022–24",
+    title: "Career break — full-time parenting",
+    desc: "Two years off paid work. Most of what I know about household economics, time under pressure, and designing for messy real life came from here.",
+  },
+  {
+    year: "2024",
+    title: "Coming back — the wrong way first",
+    desc: "I returned through a virtual-assistant course, picked up brand & content skills, and my husband and I started a studio: Sirkala. Our first try — JAKA, a multi-device POS — was too ambitious. Pausing it taught me that scope is a design tool.",
+  },
+  {
+    year: "2024–25",
+    title: "Lilist — the case for shipping small",
+    desc: "Sirkala became a studio for lightweight daily apps. Lilist shipped to the Play Store in May 2025. Three friends tried it; none could use it without me. That led to a full V2 — and a permanent shift in how I treat my own assumptions.",
+  },
+  {
+    year: "2025",
+    title: "Enigma Clinic — base camp",
+    desc: "When development funds ran low, I joined a new clinic as its brand designer. A logo guideline grew into a multi-brand system (Wellness, Skin, + Medic architecture), print, a website, and ongoing social. The clinic opened March 2026 — and became Synetic's first pilot.",
+  },
+  {
+    year: "2025→",
+    title: "Synetic — healthcare with AI",
+    desc: "We adopted AI tools and the math of what two people can ship changed overnight. We picked up the B2B EMR we'd have paused before — this time with a real pilot clinic. ~70% MVP, deploying this year.",
+  },
+  {
+    year: "NOW",
+    title: "What's next",
+    desc: "Looking for a full-time remote product design role — to learn alongside an experienced team.",
+    flag: true,
+  },
+];
+
+const wants = [
+  "Ships products with real users, not endless prototypes",
+  "Values craft, honesty, and shipping under constraint",
+  "Is comfortable with a designer who came back to tech as a mother",
+  "Has a clear remote culture (I work from Indonesia, GMT+7)",
+];
+
+const practice = [
+  { icon: "smartphone", text: "Mobile-first instinct — most of my projects start on a phone" },
+  { icon: "component", text: "Component-based design systems, fluent in Auto Layout" },
+  { icon: "sparkles", text: "AI-augmented workflow: Pencil + Claude in daily rotation" },
+  { icon: "house", text: "Cross-functional by default — my one engineer is in my house" },
+  { icon: "layers", text: "Multidisciplinary: UI, UX, brand, content, basic strategy" },
+  { icon: "languages", text: "Bilingual: Indonesian (native) + English (working)" },
+];
+
+// Inline lucide outline icons (small, tasteful) keyed by name.
+const icons: Record<string, string> = {
+  smartphone:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+  component:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.376a1 1 0 0 0-1.414 0z"/><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.917a1 1 0 0 0-1.414 0z"/><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z"/><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"/></svg>',
+  sparkles:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>',
+  house:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+  layers:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>',
+  languages:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>',
+  sigma:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg>',
+  sunrise:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>',
+  hammer:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>',
+};
+
+const marginalia = [
+  {
+    icon: "sigma",
+    title: "Bachelor's in Mathematics Education",
+    desc: "It doesn't show up in design portfolios often — but it's why I think in systems before I think in screens.",
+  },
+  {
+    icon: "sunrise",
+    title: "I work in the windows of a parent's day",
+    desc: "5am before my son wakes, naptime, after bedtime. I've made peace with no “deep focus mornings.” My workflows are built by someone who can't waste time.",
+  },
+  {
+    icon: "hammer",
+    title: "I learn by building",
+    desc: "Reading about design rarely sticks with me. Shipping a flawed V1 always does.",
+  },
+];
+---
+
+<Base title="About — Jihan Raihana">
+  <Nav />
+
+  <!-- ================= HEADER ================= -->
+  <section class="header">
+    <div class="wrap header__inner">
+      <div class="header__breadcrumb">
+        <a href="/#work" class="header__back">← BACK TO MAP</a>
+        <span class="header__crumb-r">ABOUT — THE CARTOGRAPHER</span>
+      </div>
+
+      <div class="header__row">
+        <div class="intro">
+          <p class="intro__eyebrow">06°17′S 106°43′E — TANGERANG SELATAN</p>
+          <h1 class="intro__hi">I'm Jihan.</h1>
+          <p class="intro__lead">
+            I design products from inside the constraints they have to live with —
+            small teams, real budgets, real users.
+          </p>
+          <p class="intro__p">
+            I'm a self-taught product designer with six years of visual design
+            behind me. I came back to design in 2024 after a two-year break for
+            motherhood, and now run a small design + dev studio with my husband (a
+            software engineer) while freelancing for a healthcare client.
+          </p>
+          <p class="intro__p">
+            In the last 18 months I've shipped a finance app to the Play Store,
+            built a complete two-brand identity for a new clinic, and co-built a
+            healthcare EMR using AI-augmented workflows.
+          </p>
+          <p class="intro__p">
+            I'm not the designer who sketches in cafés. I'm the designer who ships
+            at 10pm after my son is asleep, with my husband building from my Pencil
+            designs in the next room.
+          </p>
+        </div>
+
+        <div class="specimen">
+          <span class="specimen__plate">PLATE 01 — THE CARTOGRAPHER</span>
+          <div class="specimen__photo" style="background-image:url('/images/hero-profile.png')"></div>
+          <div class="specimen__caption">
+            <span class="mono">JIHAN RAIHANA</span>
+            <span class="mono">PRODUCT DESIGNER</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE ROUTE ================= -->
+  <section class="route">
+    <div class="wrap route__inner">
+      <div class="masthead">
+        <span class="masthead__l">
+          <span class="masthead__num">↳</span>
+          <span class="masthead__t">THE ROUTE — 2018 → NOW</span>
+        </span>
+        <span class="masthead__r">THE LONGER STORY</span>
+      </div>
+
+      <div class="waypoints" data-stagger>
+        {route.map((w) => (
+          <div class="wp">
+            <span class="wp__year">{w.year}</span>
+            <div class="wp__c">
+              <div class="wp__titlerow">
+                {w.flag ? (
+                  <svg class="wp__pin" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                ) : (
+                  <svg class="wp__pin" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                )}
+                <h3 class="wp__title">{w.title}</h3>
+              </div>
+              <p class="wp__desc">{w.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BASE CAMP — ENIGMA ================= -->
+  <section class="basecamp">
+    <div class="wrap basecamp__inner">
+      <div class="masthead">
+        <span class="masthead__l">
+          <svg class="masthead__icon" viewBox="0 0 24 24" fill="none" stroke="var(--mark-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+          <span class="masthead__t">BASE CAMP — ENIGMA</span>
+        </span>
+        <span class="masthead__r">BRAND &amp; VISUAL CRAFT</span>
+      </div>
+
+      <div class="bc__body">
+        <div class="bc__rail">
+          <svg class="bc__sym" viewBox="0 0 24 24" fill="none" stroke="var(--mark-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z"/></svg>
+          <span class="bc__rail-lbl">ORIGIN</span>
+        </div>
+
+        <div class="bc__main">
+          <h2 class="bc__h">The clinic where Synetic was born</h2>
+          <p class="bc__p">
+            I'm the brand designer at Enigma — and that relationship is where
+            Synetic started. What began as a logo guideline became a multi-brand
+            identity system (Enigma Wellness, Enigma Skin, with architecture for
+            Enigma Medic), print collateral, a website, and ongoing social for two
+            accounts. The clinic opened in March 2026 and runs steady operations
+            today.
+          </p>
+
+          <!-- Brand architecture -->
+          <div class="arch">
+            <div class="arch__label">
+              <span class="arch__diamond">◆</span>
+              <span class="arch__labeltext">BRAND ARCHITECTURE — ONE BRAND, MODULAR SUB-BRANDS</span>
+            </div>
+            <div class="arch__mastercol">
+              <div class="arch__masterpill"><span class="arch__mastername">Enigma</span></div>
+              <span class="arch__mastertag">MASTER BRAND</span>
+            </div>
+            <div class="arch__connector"></div>
+            <div class="arch__subbrands">
+              <div class="subcard">
+                <div class="subcard__accent" style="background:#013C4B"></div>
+                <div class="subcard__body">
+                  <span class="subcard__title" style="color:#013C4B">Enigma Wellness</span>
+                  <span class="subcard__tag">ACUPUNCTURE</span>
+                  <div class="subcard__chips">
+                    <span class="chip chip--now" style="background:#E4EDF4;color:#013C4B">Akupunktur · now</span>
+                    <span class="chip chip--later">Fisioterapi · later</span>
+                  </div>
+                  <span class="subcard__philo">Healing · herbal · cool-toned</span>
+                </div>
+              </div>
+              <div class="subcard">
+                <div class="subcard__accent" style="background:#143B15"></div>
+                <div class="subcard__body">
+                  <span class="subcard__title" style="color:#143B15">Enigma Skin</span>
+                  <span class="subcard__tag">THE BEAUTY HUB</span>
+                  <div class="subcard__chips">
+                    <span class="chip chip--now" style="background:#E7EFE7;color:#143B15">Estetika · now</span>
+                    <span class="chip chip--later">Salon · nail · hair · later</span>
+                  </div>
+                  <span class="subcard__philo">Clean · glowing · bright aesthetic</span>
+                </div>
+              </div>
+            </div>
+            <p class="arch__rationale">
+              One brand, modular sub-brands — the clinic can grow service by
+              service, and a future branch can carry just one offer (Wellness or
+              Skin) or split across two locations. Designed for how the business
+              actually expands, not just a logo.
+            </p>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats">
+            <div class="stat"><span class="stat__n">40</span><span class="stat__l">visitors, opening day</span></div>
+            <div class="stat"><span class="stat__n">35K+</span><span class="stat__l">Instagram impressions</span></div>
+            <div class="stat"><span class="stat__n">88%</span><span class="stat__l">non-follower reach</span></div>
+          </div>
+
+          <!-- Gallery -->
+          <div class="gallery">
+            <div class="gcard">
+              <div class="gcard__chrome">
+                <span class="gcard__mark">◇</span>
+                <span class="gcard__kind">VISUAL</span>
+              </div>
+              <div class="gcard__media gcard__media--logos">
+                <div class="gcard__logos">
+                  <div class="gcard__logo" style="background-image:url('/images/logo-wellness-clean.png')"></div>
+                  <div class="gcard__logo" style="background-image:url('/images/logo-skin-clean.png')"></div>
+                </div>
+                <div class="gcard__swatches">
+                  <span style="background:#CFAA5C"></span>
+                  <span style="background:#013C4B"></span>
+                  <span style="background:#143B15"></span>
+                  <span style="background:#42503D"></span>
+                  <span style="background:#FAE3CD"></span>
+                  <span style="background:#2A2A28"></span>
+                </div>
+              </div>
+              <div class="gcard__caption">BOARDS — WELLNESS / SKIN</div>
+            </div>
+
+            <div class="gcard">
+              <div class="gcard__chrome">
+                <span class="gcard__mark">◇</span>
+                <span class="gcard__kind">VISUAL</span>
+              </div>
+              <div class="gcard__media gcard__media--ph">
+                <svg class="gcard__phicon" viewBox="0 0 24 24" fill="none" stroke="#B8AF9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+                <span class="gcard__phtext">materi cetak — menyusul</span>
+              </div>
+              <div class="gcard__caption">PRINT IN-CONTEXT</div>
+            </div>
+
+            <div class="gcard">
+              <div class="gcard__chrome">
+                <span class="gcard__mark">◇</span>
+                <span class="gcard__kind">VISUAL</span>
+              </div>
+              <div class="gcard__media gcard__media--ph">
+                <svg class="gcard__phicon" viewBox="0 0 24 24" fill="none" stroke="#B8AF9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <span class="gcard__phtext">metrics — menyusul</span>
+              </div>
+              <div class="gcard__caption">INSTAGRAM — METRICS</div>
+            </div>
+          </div>
+
+          <p class="bc__note">
+            Brand work shown as craft &amp; context — the product case studies above
+            carry the portfolio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT I'M LOOKING FOR ================= -->
+  <section class="looking">
+    <div class="wrap looking__inner">
+      <div class="masthead">
+        <span class="masthead__l">
+          <span class="masthead__num">§</span>
+          <span class="masthead__t">WHAT I'M LOOKING FOR</span>
+        </span>
+        <span class="masthead__r">GROWTH</span>
+      </div>
+
+      <div class="rail-body">
+        <div class="rail-body__rail"><span class="rail-body__lbl">GROWTH</span></div>
+        <div class="rail-body__main">
+          <h2 class="rail-body__h">What I want next</h2>
+          <p class="rail-body__p">
+            After two years of building products mostly on my own — through
+            tutorials, trial and error, and a lot of educated guessing — what I want
+            next is to work inside an experienced design team.
+          </p>
+          <p class="rail-body__p">
+            I want to see how mature teams scope and ship. To learn real workflows
+            up close. To pressure-test what I've taught myself against established
+            craft, and find out which of my instincts hold up and which ones I need
+            to unlearn.
+          </p>
+          <p class="rail-body__p">
+            I'm honest about being self-taught: I've translated theory into practice
+            mostly by myself. I know there are better, more effective ways I haven't
+            discovered yet — and the fastest way to find them is to work next to
+            designers who already have.
+          </p>
+          <p class="looking__lead">A full-time remote product design role with a company that:</p>
+          <div class="wants">
+            {wants.map((w) => (
+              <div class="wants__i">
+                <span class="wants__a">→</span>
+                <span class="wants__t">{w}</span>
+              </div>
+            ))}
+          </div>
+          <p class="looking__drawn">
+            Especially drawn to healthcare, AI tools, design tools, consumer &amp;
+            daily-use apps, and products that serve small businesses — the spaces
+            I've been working in.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW I WORK ================= -->
+  <section class="howiwork">
+    <div class="wrap howiwork__inner">
+      <div class="masthead">
+        <span class="masthead__l">
+          <span class="masthead__num">§</span>
+          <span class="masthead__t">HOW I WORK</span>
+        </span>
+        <span class="masthead__r">PRACTICE</span>
+      </div>
+
+      <div class="rail-body">
+        <div class="rail-body__rail"><span class="rail-body__lbl">PRACTICE</span></div>
+        <div class="rail-body__main">
+          <div class="howlist">
+            {practice.map((p) => (
+              <div class="howlist__i">
+                <span class="howlist__ic" set:html={icons[p.icon]} />
+                <span class="howlist__t">{p.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOT ON THE CV ================= -->
+  <section class="marginalia">
+    <div class="wrap marginalia__inner">
+      <div class="masthead">
+        <span class="masthead__l">
+          <span class="masthead__num">✦</span>
+          <span class="masthead__t">A FEW THINGS NOT ON THE CV</span>
+        </span>
+        <span class="masthead__r">MARGINALIA</span>
+      </div>
+
+      <div class="cards">
+        {marginalia.map((m) => (
+          <div class="card">
+            <span class="card__ic" set:html={icons[m.icon]} />
+            <h3 class="card__title">{m.title}</h3>
+            <p class="card__desc">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Colophon />
+</Base>
+
+<style>
+  /* ---------- shared masthead (matches index.astro) ---------- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .masthead__l {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .masthead__num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .masthead__icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+  .masthead__t,
+  .masthead__r {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--ink-secondary);
+  }
+
+  /* ---------- HEADER ---------- */
+  .header {
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .header__inner {
+    padding-top: 52px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+  .header__breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 8px;
+  }
+  .header__back {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .header__back:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .header__crumb-r {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-secondary);
+  }
+  .header__row {
+    display: flex;
+    gap: 72px;
+    align-items: flex-start;
+  }
+  .intro {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .intro__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+  .intro__hi {
+    font-family: var(--font-display);
+    font-size: 72px;
+    line-height: 1.06;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .intro__lead {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.3;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .intro__p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+  }
+  .specimen {
+    width: 360px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .specimen__plate {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+  }
+  .specimen__photo {
+    width: 100%;
+    height: 460px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+  }
+  .specimen__caption {
+    display: flex;
+    justify-content: space-between;
+  }
+  .specimen__caption .mono {
+    font-size: 11px;
+  }
+
+  /* ---------- THE ROUTE ---------- */
+  .route {
+    background: var(--surface-raised);
+  }
+  .route__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .waypoints {
+    border-top: 1px solid var(--border-subtle);
+  }
+  .wp {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .wp__year {
+    width: 110px;
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .wp__c {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .wp__titlerow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .wp__pin {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .wp__title {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .wp__desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+
+  /* ---------- BASE CAMP ---------- */
+  .basecamp {
+    background: var(--surface);
+  }
+  .basecamp__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .bc__body {
+    display: flex;
+    gap: 72px;
+    align-items: flex-start;
+  }
+  .bc__rail {
+    width: 140px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bc__sym {
+    width: 30px;
+    height: 30px;
+  }
+  .bc__rail-lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--ink-secondary);
+  }
+  .bc__main {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .bc__h {
+    font-family: var(--font-display);
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--ink);
+    max-width: 760px;
+  }
+  .bc__p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+    max-width: 760px;
+  }
+  .bc__note {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--ink-secondary);
+    max-width: 760px;
+  }
+
+  /* Brand architecture */
+  .arch {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    padding: 28px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+  }
+  .arch__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .arch__diamond {
+    font-size: 11px;
+    color: #CFAA5C;
+  }
+  .arch__labeltext {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    color: var(--ink-secondary);
+  }
+  .arch__mastercol {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+  .arch__masterpill {
+    padding: 10px 26px;
+    background: #CFAA5C;
+    border-radius: 999px;
+  }
+  .arch__mastername {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .arch__mastertag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  .arch__connector {
+    width: 2px;
+    height: 22px;
+    background: var(--contour);
+  }
+  .arch__subbrands {
+    width: 100%;
+    display: flex;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .subcard {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .subcard__accent {
+    width: 100%;
+    height: 6px;
+    flex-shrink: 0;
+  }
+  .subcard__body {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 16px;
+  }
+  .subcard__title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .subcard__tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: #CFAA5C;
+  }
+  .subcard__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chip {
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+  }
+  .chip--later {
+    border: 1px solid var(--ink-secondary);
+    color: var(--ink-secondary);
+  }
+  .subcard__philo {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink-secondary);
+  }
+  .arch__rationale {
+    max-width: 760px;
+    font-size: 12px;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--ink-secondary);
+    text-align: center;
+  }
+
+  /* Stats */
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat__n {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .stat__l {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-secondary);
+  }
+
+  /* Gallery */
+  .gallery {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .gcard {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(45, 41, 38, 0.08);
+    overflow: hidden;
+  }
+  .gcard__chrome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+  }
+  .gcard__mark {
+    font-size: 13px;
+    color: var(--mark-brand);
+  }
+  .gcard__kind {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  .gcard__media {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #F3EBDD;
+  }
+  .gcard__media--ph {
+    gap: 10px;
+  }
+  .gcard__logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .gcard__logo {
+    width: 78px;
+    height: 78px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
+  .gcard__swatches {
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .gcard__swatches span {
+    width: 26px;
+    height: 14px;
+  }
+  .gcard__phicon {
+    width: 28px;
+    height: 28px;
+  }
+  .gcard__phtext {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #A89F8C;
+  }
+  .gcard__caption {
+    padding: 10px 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-secondary);
+  }
+
+  /* ---------- RAIL-BODY (Looking / How I work) ---------- */
+  .looking {
+    background: var(--surface-raised);
+  }
+  .howiwork {
+    background: var(--surface);
+  }
+  .looking__inner,
+  .howiwork__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .rail-body {
+    display: flex;
+    gap: 72px;
+    align-items: flex-start;
+  }
+  .rail-body__rail {
+    width: 140px;
+    flex-shrink: 0;
+  }
+  .rail-body__lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--ink-secondary);
+  }
+  .rail-body__main {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rail-body__h {
+    font-family: var(--font-display);
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .rail-body__p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+  }
+  .looking__lead {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .wants {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wants__i {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .wants__a {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .wants__t {
+    flex: 1 1 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-secondary);
+  }
+  .looking__drawn {
+    font-size: 16px;
+    line-height: 1.55;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* How I work list */
+  .howlist {
+    width: 100%;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .howlist__i {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .howlist__ic :global(svg) {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+  .howlist__t {
+    flex: 1 1 0;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  /* ---------- MARGINALIA ---------- */
+  .marginalia {
+    background: var(--surface-raised);
+  }
+  .marginalia__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .cards {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .card {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .card__ic :global(svg) {
+    width: 22px;
+    height: 22px;
+  }
+  .card__title {
+    font-family: var(--font-display);
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .card__desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1024px) {
+    .header__row {
+      flex-direction: column;
+    }
+    .specimen {
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .bc__body,
+    .rail-body {
+      flex-direction: column;
+      gap: 28px;
+    }
+    .bc__rail,
+    .rail-body__rail {
+      width: 100%;
+    }
+    .arch__subbrands {
+      flex-direction: column;
+    }
+    .gallery {
+      flex-direction: column;
+    }
+    .cards {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .intro__hi {
+      font-size: 48px;
+    }
+    .intro__lead {
+      font-size: 21px;
+    }
+    .bc__h,
+    .rail-body__h {
+      font-size: 26px;
+    }
+    .wp {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .wp__year {
+      width: auto;
+    }
+    .stats {
+      gap: 28px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .intro__hi {
+      font-size: 38px;
+    }
+  }
+</style>

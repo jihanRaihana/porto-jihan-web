@@ -1,0 +1,995 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Colophon from "../../components/Colophon.astro";
+---
+
+<Base title="Synetic — Case Study — Jihan Raihana">
+  <Nav />
+
+  <!-- ================= TERRITORY HEADER ================= -->
+  <section class="header">
+    <div class="wrap header__inner">
+      <!-- Contour backdrop -->
+      <div class="header__contour" aria-hidden="true" data-parallax="0.12">
+        <span style="width:660px;height:660px;left:0;top:0;"></span>
+        <span style="width:560px;height:560px;left:50px;top:50px;"></span>
+        <span style="width:460px;height:460px;left:100px;top:100px;"></span>
+        <span style="width:360px;height:360px;left:150px;top:150px;"></span>
+        <span style="width:260px;height:260px;left:200px;top:200px;"></span>
+        <span style="width:160px;height:160px;left:250px;top:250px;"></span>
+      </div>
+
+      <div class="header__breadcrumb">
+        <a href="/#work" class="header__back">← BACK TO MAP</a>
+        <span class="header__idx">TERRITORY 01 / 02</span>
+      </div>
+
+      <div class="header__titlerow">
+        <svg class="tri tri--lg" viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+        <h1 class="header__title">Synetic</h1>
+      </div>
+
+      <p class="header__tagline">A plug-and-play EMR for specialty clinics in Indonesia.</p>
+
+      <p class="header__intro">
+        How a two-person team designed and shipped a healthcare product with an AI-augmented
+        workflow — built inside a real clinic, for real doctors.
+      </p>
+
+      <div class="survey">
+        <div class="survey__row">
+          <div class="survey__cell">
+            <span class="survey__k">ROLE</span>
+            <span class="survey__v">Product Designer (Lead) · UX, UI, Design System</span>
+          </div>
+          <div class="survey__cell">
+            <span class="survey__k">TEAM</span>
+            <span class="survey__v">Me (design) + my husband (engineering)</span>
+          </div>
+          <div class="survey__cell">
+            <span class="survey__k">DURATION</span>
+            <span class="survey__v">Jan 2025 – present</span>
+          </div>
+        </div>
+        <div class="survey__row">
+          <div class="survey__cell">
+            <span class="survey__k">STATUS</span>
+            <span class="survey__v">MVP 1 · early testing at pilot clinic</span>
+          </div>
+          <div class="survey__cell">
+            <span class="survey__k">TOOLS</span>
+            <span class="survey__v">Pencil · Claude · GitHub · Figma Make (client pitch only)</span>
+          </div>
+          <div class="survey__cell">
+            <span class="survey__k">STACK</span>
+            <span class="survey__v">React · NestJS · PostgreSQL · Keycloak · Nx</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero mockup -->
+      <figure class="plate">
+        <figcaption class="plate__label">
+          <span class="plate__pl">PLATE 01 — ADMIN DASHBOARD</span>
+          <svg class="tri tri--sm" viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+        </figcaption>
+        <div class="browser">
+          <div class="browser__bar">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">synetic.app/admin/dashboard</span>
+          </div>
+          <div class="browser__shot browser__shot--admin" style="background-image:url('/images/admindashboard.png')"></div>
+        </div>
+        <div class="plate__foot">
+          <span>SYNETIC · ADMIN DASHBOARD</span>
+          <span>FIG. 01</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= 01 CONTEXT ================= -->
+  <section class="sec sec--raised">
+    <div class="wrap sec__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(01)</span><span class="masthead__t">CONTEXT</span></span>
+        <span class="masthead__r">FIELD NOTE — JAN 2025</span>
+      </div>
+      <div class="row">
+        <div class="rail"><span class="rail__num">01</span><span class="rail__lbl">CONTEXT</span></div>
+        <div class="main">
+          <h2 class="main__h">Why a designer–engineer couple started building healthcare software</h2>
+          <p class="p">
+            I freelance as a brand designer for a clinic in Indonesia — three doctors, two
+            services (acupuncture &amp; aesthetic). I've been with them since they were a logo on
+            a napkin, through their grand opening.
+          </p>
+          <p class="p">
+            Working inside the clinic gave me something rare: a daily, unfiltered view of how a
+            small healthcare business actually runs.
+          </p>
+          <p class="lead">The owner kept hitting the same wall:</p>
+          <ul class="walls">
+            <li><span class="walls__a">→</span><span>A generic clinic-management tool — fine for cashier and attendance, but not built for medical workflows.</span></li>
+            <li><span class="walls__a">→</span><span>Patient records lived in Excel and Word documents.</span></li>
+            <li><span class="walls__a">→</span><span>Stock tracking was manual and error-prone.</span></li>
+            <li><span class="walls__a">→</span><span>Real EMR software was out of budget.</span></li>
+          </ul>
+          <blockquote class="fieldnote">
+            This is the reality for most small clinics in Indonesia. Existing EMRs are priced
+            for hospitals; small clinics fall through the cracks.
+          </blockquote>
+          <p class="p">
+            After two earlier attempts that never reached real users — Lilist, a finance app, and
+            JAKA, a POS system — my husband and I made a different choice this time: build for a
+            clinic we already have access to. Real users. Real workflow. Real constraints. That's
+            how Synetic started.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 USERS & WORKFLOWS ================= -->
+  <section class="sec sec--surface">
+    <div class="wrap sec__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(02)</span><span class="masthead__t">USERS &amp; WORKFLOWS</span></span>
+        <span class="masthead__r">4 ROLES · 3 CONTEXTS</span>
+      </div>
+      <div class="row">
+        <div class="rail"><span class="rail__num">02</span><span class="rail__lbl">USERS</span></div>
+        <div class="main">
+          <h2 class="main__h">Designing for four roles, three specialty contexts</h2>
+
+          <dl class="roles">
+            <div><dt>DOCTOR</dt><dd>Consultations, medical records, specialty documentation, treatment plans, prescriptions</dd></div>
+            <div><dt>RECEPTIONIST</dt><dd>Patient booking, check-in, payment</dd></div>
+            <div><dt>ADMIN</dt><dd>Master data, financial reports, consumable stock (BHP), clinic dashboards</dd></div>
+            <div><dt>THERAPIST</dt><dd>No dedicated workspace yet — tracked for commission when assisting treatment</dd></div>
+          </dl>
+
+          <p class="p">
+            The harder design problem was specialty workspaces. An acupuncturist documents
+            radically different things than an aesthetic doctor — yet both are doctors in the same
+            clinic.
+          </p>
+
+          <div class="specialties">
+            <div class="spec-card">
+              <span class="spec-card__t">ACUPUNCTURE</span>
+              <span class="spec-card__i">· SOAP notes</span>
+              <span class="spec-card__i">· Acupoint documentation</span>
+              <span class="spec-card__i">· Needle count &amp; placement</span>
+              <span class="spec-card__i">· Multi-session plans</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-card__t">AESTHETIC</span>
+              <span class="spec-card__i">· SOAP notes</span>
+              <span class="spec-card__i">· Before / after photos</span>
+              <span class="spec-card__i">· Visual treatment plan</span>
+              <span class="spec-card__i">· Consent forms</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-card__t">GENERAL (FUTURE)</span>
+              <span class="spec-card__i">· SOAP notes</span>
+              <span class="spec-card__i">· Prescription</span>
+              <span class="spec-card__i">· For commercialization</span>
+            </div>
+          </div>
+
+          <p class="p">
+            Instead of building three separate apps, I designed one platform with swappable
+            workspace modules — and split it by how much is shared:
+          </p>
+
+          <div class="archbar">
+            <div class="archbar__seg archbar__seg--shared">
+              <span class="archbar__t">SHARED — 60%</span>
+              <span class="archbar__d">auth · patient records · billing · calendar</span>
+            </div>
+            <div class="archbar__seg archbar__seg--specialty">
+              <span class="archbar__t">SPECIALTY — 20%</span>
+              <span class="archbar__d">workspace layer</span>
+            </div>
+            <div class="archbar__seg archbar__seg--admin">
+              <span class="archbar__t">ADMIN — 20%</span>
+              <span class="archbar__d">reporting</span>
+            </div>
+          </div>
+
+          <p class="p">
+            But the structure didn't land in one shot. My first draft in Figma Make was
+            specialty-first: each workspace had its own dedicated flow — acupuncture went
+            Complaint → Diagnosis → Point Mapping → Needles → Plan.
+          </p>
+          <p class="p">
+            When I walked the clinic team through it, they kept reaching for the same word: SOAP.
+            Indonesian doctors use the SOAP framework — Subjective, Objective, Assessment, Plan —
+            across every specialty. My specialty-first structure was technically novel, but
+            practically a stranger to them.
+          </p>
+          <blockquote class="fieldnote">
+            I restructured on the spot. SOAP became the universal backbone; specialty content
+            (acupoint mapping, before/after photos, clinical findings) became plugins injected
+            at the Assessment and Plan steps.
+          </blockquote>
+
+          <div class="principle">
+            <span class="principle__lbl">DESIGN PRINCIPLE</span>
+            <p class="principle__q">SOAP as foundation. Specialty as plugin. Never the reverse.</p>
+          </div>
+
+          <p class="p">
+            Adding a new specialty no longer means redesigning the workspace — just designing its
+            injection plugin for Assessment and Plan.
+          </p>
+
+          <!-- Workspace plate -->
+          <figure class="plate plate--wide">
+            <figcaption class="plate__label">
+              <span class="plate__pl">PLATE 02 — ACUPUNCTURE SOAP WORKSPACE</span>
+              <svg class="tri tri--sm" viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+            </figcaption>
+            <div class="browser">
+              <div class="browser__bar">
+                <span class="browser__dots"><i></i><i></i><i></i></span>
+                <span class="browser__url">synetic.app/workspace/acupuncture</span>
+              </div>
+              <div class="browser__shot browser__shot--workspace" style="background-image:url('/images/workspace-01a-soap-layanansatuan.png')"></div>
+            </div>
+            <div class="plate__foot">
+              <span>SHIPPED — SOAP BACKBONE + ICD-10 (M54.5) + ACUPUNCTURE INJECTION</span>
+              <span>FIG. 02</span>
+            </div>
+            <p class="partialnote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-.722-3.25"/><path d="M2 8a10.645 10.645 0 0 0 20 0"/><path d="m20 15-1.726-2.05"/><path d="m4 15 1.726-2.05"/><path d="m9 18 .722-3.25"/></svg>
+              <span>Shown in part — Synetic is a live product, so the full workspace stays in the clinic.</span>
+            </p>
+          </figure>
+
+          <!-- Breadth gallery -->
+          <div class="gallery">
+            <div class="gallery__head">
+              <span class="plate__pl">PLATE 03 — BREADTH: MULTI-ROLE MODULES</span>
+              <span class="plate__fig">FIG. 03</span>
+            </div>
+
+            <figure class="gallery__item">
+              <figcaption class="gallery__cap">
+                <span class="gallery__t">Receptionist — registering a new patient</span>
+                <span class="gallery__r">MODAL</span>
+              </figcaption>
+              <div class="browser">
+                <div class="browser__bar">
+                  <span class="browser__dots"><i></i><i></i><i></i></span>
+                  <span class="browser__url">synetic.app/patients</span>
+                </div>
+                <div class="browser__modalbody">
+                  <div class="browser__blur" style="background-image:url('/images/patient-01-list.png')"></div>
+                  <div class="browser__dim"></div>
+                  <div class="browser__modal" style="background-image:url('/images/Registration-patient.png')"></div>
+                </div>
+              </div>
+            </figure>
+
+            <figure class="gallery__item">
+              <figcaption class="gallery__cap">
+                <span class="gallery__t">Admin — clinic finance &amp; reporting</span>
+                <span class="gallery__r">BUILT IN CODE, NO FIGMA</span>
+              </figcaption>
+              <div class="browser">
+                <div class="browser__bar">
+                  <span class="browser__dots"><i></i><i></i><i></i></span>
+                  <span class="browser__url">synetic.app/admin/finance</span>
+                </div>
+                <div class="browser__shot browser__shot--finance" style="background-image:url('/images/financereport.png')"></div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 PROCESS ================= -->
+  <section class="sec sec--raised">
+    <div class="wrap sec__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(03)</span><span class="masthead__t">PROCESS</span></span>
+        <span class="masthead__r">AI AS CO-DESIGNER</span>
+      </div>
+      <div class="row">
+        <div class="rail"><span class="rail__num">03</span><span class="rail__lbl">PROCESS</span></div>
+        <div class="main">
+          <h2 class="main__h">What it means to design with AI as a co-designer</h2>
+          <p class="p">
+            Six years of graphic design taught me to be a perfectionist about Auto Layout — every
+            frame, every component, every spacing token, pristine. Then I tried to ship a
+            healthcare app with a team of two before the pilot clinic opened.
+          </p>
+          <p class="p">
+            We first leaned on Figma Make to win the work: it turns a design into a clickable
+            prototype instantly — perfect for walking the clinic owner through the main flow and
+            features, and closing the deal. The trouble came after the yes: building production
+            straight from that Figma Make output wasn't viable for two people on a budget.
+          </p>
+          <blockquote class="fieldnote">
+            The cost hit twice. The generated code was messy enough that refactoring it into
+            production with Claude burned through tokens — and Figma Make's own subscription
+            added up on top. For a two-person team, that math simply didn't work.
+          </blockquote>
+          <p class="p">
+            So we found a leaner path — and it's now how we actually ship. I redesign every screen
+            frame-by-frame in Pencil, with Claude as my co-designer; I push to GitHub; and my
+            husband builds straight from it with Claude. The whole pipeline runs on a single
+            Claude subscription — Pencil itself is free. The entire Synetic MVP 1 my husband is
+            building was designed this way, in about a month.
+          </p>
+
+          <span class="flowlbl">THE HANDOFF LOOP</span>
+          <div class="loop">
+            <div class="loop__step"><span class="loop__n">01</span><span class="loop__t">Design in Pencil</span><span class="loop__w">· me — frame by frame, with Claude</span></div>
+            <span class="loop__arr">↓</span>
+            <div class="loop__step"><span class="loop__n">02</span><span class="loop__t">Push to GitHub</span></div>
+            <span class="loop__arr">↓</span>
+            <div class="loop__step"><span class="loop__n">03</span><span class="loop__t">My husband builds with Claude</span></div>
+            <span class="loop__arr">↓</span>
+            <div class="loop__step"><span class="loop__n">04</span><span class="loop__t">Production deploy</span></div>
+            <span class="loop__arr">↓</span>
+            <div class="loop__step"><span class="loop__n">05</span><span class="loop__t">Pilot clinic feedback</span><span class="loop__w">· real doctors &amp; receptionist</span></div>
+            <span class="loop__loop">⟲ feedback loops back into Pencil · one Claude subscription, Pencil is free</span>
+          </div>
+
+          <p class="p">
+            This isn't the workflow I'd have chosen 12 months ago — it took letting go of tools I
+            was precious about and rebuilding how we work. But it's the only reason a two-person
+            team can ship a healthcare product at all.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 SCOPE ================= -->
+  <section class="sec sec--surface">
+    <div class="wrap sec__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(04)</span><span class="masthead__t">SCOPE — THE ICD-10 DECISION</span></span>
+        <span class="masthead__r">WHAT TO CUT</span>
+      </div>
+      <div class="row">
+        <div class="rail"><span class="rail__num">04</span><span class="rail__lbl">SCOPE</span></div>
+        <div class="main">
+          <h2 class="main__h">A design decision I'm proud of — and had to let go of</h2>
+
+          <div class="almost">
+            <span class="almost__lbl">THE DESIGN I ALMOST SHIPPED</span>
+            <p class="almost__t">
+              A doctor selects a diagnosis from ICD-10. The system auto-traces the corresponding
+              acupuncture points on a 3D body diagram. The doctor confirms or adjusts. Treatment
+              is logged.
+            </p>
+          </div>
+
+          <p class="p">
+            It would have been beautiful. It would have removed an entire category of cognitive
+            load from the doctor's day. It would also have been a six-month engineering project on
+            its own.
+          </p>
+
+          <blockquote class="fieldnote fieldnote--quote">
+            <span class="fieldnote__q">“This is the right idea. We can't ship it in MVP.”</span>
+            <span class="fieldnote__a">— MY HUSBAND, ON THE SPEC</span>
+          </blockquote>
+
+          <div class="tradeoff">
+            <div class="tradeoff__card">
+              <span class="tradeoff__h tradeoff__h--kept">KEPT</span>
+              <span class="tradeoff__i">ICD-10 integration — high value, low cost</span>
+              <span class="tradeoff__i">Structured text input: points needled, needle count, session notes</span>
+            </div>
+            <div class="tradeoff__card">
+              <span class="tradeoff__h">CUT</span>
+              <span class="tradeoff__i">The auto-traced 3D body diagram — six months we didn't have</span>
+            </div>
+          </div>
+
+          <p class="p">The doctor still gets structured documentation. We still get to ship.</p>
+
+          <div class="principle">
+            <span class="principle__lbl">WHAT DESIGN SCHOOL DOESN'T TEACH</span>
+            <p class="principle__q">90% of being a useful designer in a small team is knowing what to cut.</p>
+          </div>
+
+          <!-- Plate 04: the ambitious cut version (rebuilt mockup) -->
+          <figure class="plate plate--wide bodymap-figure">
+            <figcaption class="plate__label">
+              <span class="plate__pl">PLATE 04 — THE AMBITIOUS VERSION I CUT</span>
+              <svg class="tri tri--sm" viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+            </figcaption>
+            <div class="browser browser--blue">
+              <div class="browser__bar">
+                <span class="browser__dots"><i></i><i></i><i></i></span>
+                <span class="browser__url">synetic.app/workspace/body-mapping</span>
+              </div>
+              <div class="bodymap">
+                <div class="bm-crumb">
+                  <span class="bm-crumb__a">› My Patients ›</span>
+                  <span class="bm-crumb__b">Consultation Room</span>
+                </div>
+
+                <div class="bm-card">
+                  <span class="bm-card__title">Medical Diagnosis (ICD-10)</span>
+                  <span class="bm-card__sub">Diagnosis Code</span>
+                  <div class="bm-search">Search by code or name (e.g., M54.5 or Low Back Pain)</div>
+                  <span class="bm-card__sub">Common ICD-10 Codes for Acupuncture</span>
+                  <div class="bm-chips">
+                    <span class="bm-chip bm-chip--sel"><b>M54.5</b><i>Low Back Pain</i></span>
+                    <span class="bm-chip"><b>M54.2</b><i>Cervicalgia (Neck Pain)</i></span>
+                    <span class="bm-chip"><b>M79.1</b><i>Myalgia (Muscle Pain)</i></span>
+                    <span class="bm-chip"><b>M79.3</b><i>Panniculitis (Trigger Points)</i></span>
+                    <span class="bm-chip"><b>M25.5</b><i>Joint Pain</i></span>
+                    <span class="bm-chip"><b>M75.0</b><i>Adhesive Capsulitis of Shoulder (Frozen Shoulder)</i></span>
+                    <span class="bm-chip"><b>M77.9</b><i>Enthesopathy (Tendinitis)</i></span>
+                    <span class="bm-chip"><b>M19.90</b><i>Osteoarthritis</i></span>
+                  </div>
+                </div>
+
+                <div class="bm-card">
+                  <div class="bm-card__hdr">
+                    <span class="bm-card__title">Body Mapping Visualization</span>
+                    <span class="bm-btn">View Mapping History</span>
+                  </div>
+                  <span class="bm-dropdown">Back View ⌄</span>
+                  <div class="bm-viz">
+                    <div class="bm-bodybox">
+                      <span class="bm-centerline"></span>
+                      <div class="bm-bodyimg" style="background-image:url('/images/generated-1782217234169.png')"></div>
+                      <span class="bm-pin" style="left:54%;top:29%;width:15px;height:15px;background:#E5484D;"></span>
+                      <span class="bm-pin" style="left:50%;top:34%;width:12px;height:12px;background:#F5A623;"></span>
+                      <span class="bm-pin" style="left:58%;top:34%;width:12px;height:12px;background:#3E63DD;"></span>
+                      <span class="bm-pin" style="left:54%;top:63%;width:15px;height:15px;background:#E5484D;"></span>
+                      <span class="bm-pin" style="left:52%;top:51%;width:11px;height:11px;background:#EDC531;"></span>
+                      <span class="bm-selring" style="left:53%;top:27%;"></span>
+                    </div>
+                    <div class="bm-legend">
+                      <span class="bm-legend__t">Pin Legend</span>
+                      <span class="bm-legend__row"><i style="background:#E5484D"></i>Critical Pain (8–10/10)</span>
+                      <span class="bm-legend__row"><i style="background:#F5A623"></i>Moderate Pain (5–7/10)</span>
+                      <span class="bm-legend__row"><i style="background:#EDC531"></i>Mild Pain (3–4/10)</span>
+                      <span class="bm-legend__row"><i style="background:#3E63DD"></i>Nerve Target</span>
+                      <span class="bm-legend__row"><i style="background:#8E4EC6"></i>Trigger Point</span>
+                      <span class="bm-legend__row"><i style="background:#2AA198"></i>Follow-up Point</span>
+                      <span class="bm-hint">Click anywhere on the body to add a pin. Click the colour dot to change type. Toggle to show previous-visit pins.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="plate__foot">
+              <span>AMBITIOUS — auto-trace ICD-10 → body points · CUT for MVP</span>
+              <span>FIG. 04</span>
+            </div>
+          </figure>
+
+          <!-- After callout: what shipped instead -->
+          <div class="after">
+            <span class="after__conn">↓ what shipped instead</span>
+            <div class="after__label">
+              <span class="plate__pl">PLATE 05 — THE SHIPPED FIX: ICD-10 INSIDE SOAP</span>
+              <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="shot-frame"><div class="shot-frame__img" style="background-image:url('/images/assessment.png');aspect-ratio:1100/367;"></div></div>
+            <div class="shot-frame"><div class="shot-frame__img" style="background-image:url('/images/plan.png');aspect-ratio:1100/270;"></div></div>
+            <p class="after__cap">
+              The idea survived the cut — ICD-10 lives in the Assessment step, and the doctor
+              selects acupuncture points by hand in Plan. Structured documentation, without the
+              six-month build.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 HONEST STATUS ================= -->
+  <section class="sec sec--raised">
+    <div class="wrap sec__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(05)</span><span class="masthead__t">WHAT I'M STILL FIGURING OUT</span></span>
+        <span class="masthead__r">HONEST STATUS</span>
+      </div>
+      <div class="row">
+        <div class="rail"><span class="rail__num">05</span><span class="rail__lbl">STATUS</span></div>
+        <div class="main main--wide">
+          <div class="status">
+            <div class="status__col">
+              <span class="status__h">DONE</span>
+              <span class="status__i"><span class="status__m status__m--done">✓</span>Doctor workspace — Acupuncture (V2 SOAP, shipped)</span>
+              <span class="status__i"><span class="status__m status__m--done">✓</span>Receptionist module (booking, check-in, payment)</span>
+              <span class="status__i"><span class="status__m status__m--done">✓</span>Admin module (built directly in code)</span>
+              <span class="status__i"><span class="status__m status__m--done">✓</span>Auth &amp; multi-role architecture</span>
+              <span class="status__i"><span class="status__m status__m--done">✓</span>Prototype with realistic data, ready for testing</span>
+            </div>
+            <div class="status__col">
+              <span class="status__h status__h--prog">IN PROGRESS</span>
+              <span class="status__i"><span class="status__m status__m--prog">▣</span>Doctor workspace — Aesthetic (V1 designed; V2 deferred)</span>
+              <span class="status__i"><span class="status__m status__m--prog">▣</span>Therapist commission logic</span>
+              <span class="status__i"><span class="status__m status__m--prog">▣</span>Patient portal (clinic ops first)</span>
+              <span class="status__i"><span class="status__m status__m--prog">▣</span>Staff room (payroll, performance)</span>
+            </div>
+            <div class="status__col">
+              <span class="status__h status__h--todo">NOT YET STARTED</span>
+              <span class="status__i"><span class="status__m">☐</span>Therapist workspace</span>
+              <span class="status__i"><span class="status__m">☐</span>Synetic's own brand identity</span>
+              <span class="status__i"><span class="status__m">☐</span>Marketing landing page</span>
+              <span class="status__i"><span class="status__m">☐</span>Commercial business model</span>
+              <span class="status__i"><span class="status__m">☐</span>New-clinic onboarding</span>
+            </div>
+          </div>
+          <blockquote class="fieldnote">
+            MVP 1 is now in early testing at the pilot clinic — the doctors and receptionist
+            using it day to day. Next is MVP 2, shaped by what we learn in the field.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 LESSONS ================= -->
+  <section class="sec sec--surface">
+    <div class="wrap sec__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(06)</span><span class="masthead__t">WHAT THIS PROJECT TAUGHT ME</span></span>
+        <span class="masthead__r">LESSONS</span>
+      </div>
+      <div class="row">
+        <div class="rail"><span class="rail__num">06</span><span class="rail__lbl">LESSONS</span></div>
+        <div class="main">
+          <ol class="lessons">
+            <li><span class="lessons__n">01</span><span>Real users sharpen designs faster than any framework. An hour with the receptionist beats a week of personas.</span></li>
+            <li><span class="lessons__n">02</span><span>Healthcare design is mostly invisible work — the most important screen is a patient record loading in under two seconds during a 15-minute appointment.</span></li>
+            <li><span class="lessons__n">03</span><span>AI tools don't replace design judgment. They compress the distance between idea and prototype. What to build, cut, and test is still entirely human.</span></li>
+            <li><span class="lessons__n">04</span><span>Constraints made me a better designer than ambition ever did. The version we're shipping isn't the one I dreamed of — it's the one that exists.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEXT TERRITORY ================= -->
+  <a href="/work/lilist" class="nextterr">
+    <div class="nextterr__l">
+      <span class="nextterr__k">NEXT TERRITORY</span>
+      <span class="nextterr__s">02 / 03 — CONSUMER FINANCE</span>
+    </div>
+    <div class="nextterr__r">
+      <svg class="nextterr__mark" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+      <span class="nextterr__name">Lilist</span>
+      <span class="nextterr__arr">→</span>
+    </div>
+  </a>
+
+  <Colophon />
+</Base>
+
+<style>
+  /* ---------- shared section scaffolding ---------- */
+  .sec--surface { background: var(--surface); }
+  .sec--raised { background: var(--surface-raised); }
+  .sec__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* triangle marker */
+  .tri--lg { width: 40px; height: 40px; flex-shrink: 0; }
+  .tri--sm { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .masthead__l { display: flex; align-items: center; gap: 12px; }
+  .masthead__num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+  .masthead__t { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.13em; color: var(--ink-secondary); }
+  .masthead__r { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-secondary); }
+
+  /* ---------- number-rail row ---------- */
+  .row { display: flex; gap: 72px; align-items: flex-start; }
+  .rail { width: 140px; flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; }
+  .rail__num { font-family: var(--font-display); font-size: 56px; font-weight: 500; color: var(--accent); line-height: 1; }
+  .rail__lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.09em; color: var(--ink-secondary); }
+  .main { width: 760px; max-width: 100%; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+  .main--wide { flex: 1 1 0; width: auto; }
+  .main__h { font-family: var(--font-display); font-size: 30px; line-height: 1.2; font-weight: 500; color: var(--ink); }
+
+  .p { font-size: 17px; line-height: 1.65; color: var(--ink-secondary); }
+  .lead { font-size: 17px; line-height: 1.6; font-weight: 600; color: var(--ink); }
+
+  /* field-note callout */
+  .fieldnote {
+    margin: 0;
+    padding: 6px 0 6px 18px;
+    border-left: 2px solid var(--accent);
+    font-size: 16px;
+    line-height: 1.62;
+    font-style: italic;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fieldnote--quote { font-style: normal; }
+  .fieldnote__q { font-family: var(--font-display); font-size: 22px; line-height: 1.36; font-style: italic; color: var(--ink); }
+  .fieldnote__a { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--ink-secondary); }
+
+  /* principle pull-quote */
+  .principle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .principle__lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); }
+  .principle__q { font-family: var(--font-display); font-size: 32px; line-height: 1.19; font-weight: 500; font-style: italic; color: var(--ink); }
+
+  /* ================= HEADER ================= */
+  .header { background: var(--surface); overflow: hidden; }
+  .header__inner {
+    position: relative;
+    padding-top: 52px;
+    padding-bottom: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+  .header__contour { position: absolute; right: -160px; top: -220px; width: 660px; height: 660px; opacity: 0.4; z-index: 0; pointer-events: none; }
+  .header__contour span { position: absolute; border: 1px solid var(--contour); border-radius: 50%; }
+  .header__breadcrumb, .header__titlerow, .header__tagline, .header__intro, .survey, .plate { position: relative; z-index: 1; }
+  .header__breadcrumb { display: flex; justify-content: space-between; align-items: center; }
+  .header__back { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.09em; color: var(--accent); }
+  .header__back:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .header__idx { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.09em; color: var(--ink-secondary); }
+  .header__titlerow { display: flex; align-items: center; gap: 18px; padding-top: 12px; }
+  .header__title { font-family: var(--font-display); font-size: 86px; line-height: 1; font-weight: 500; color: var(--ink); }
+  .header__tagline { font-family: var(--font-display); font-size: 28px; line-height: 1.21; font-style: italic; color: var(--ink); max-width: 820px; }
+  .header__intro { font-size: 18px; line-height: 1.61; color: var(--ink-secondary); max-width: 720px; }
+
+  /* survey data */
+  .survey { width: 100%; padding-top: 24px; border-top: 1px solid var(--border-subtle); }
+  .survey__row { display: flex; gap: 32px; padding: 18px 0; }
+  .survey__cell { flex: 1 1 0; display: flex; flex-direction: column; gap: 6px; }
+  .survey__k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.09em; color: var(--accent); }
+  .survey__v { font-size: 14px; line-height: 1.43; color: var(--ink); }
+
+  /* ---------- plate / browser mockup ---------- */
+  .plate { width: 100%; display: flex; flex-direction: column; gap: 12px; margin: 0; }
+  .plate--wide { width: 1100px; max-width: 100%; }
+  .plate__label { display: flex; justify-content: space-between; align-items: center; }
+  .plate__pl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--accent); }
+  .plate__fig { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-secondary); }
+  .plate__foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .plate__foot span { font-family: var(--font-mono); font-size: 11px; color: var(--ink-secondary); }
+
+  .browser {
+    width: 100%;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+    overflow: hidden;
+  }
+  .browser__bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 16px;
+    background: var(--surface-raised);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .browser__dots { display: flex; gap: 7px; }
+  .browser__dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--contour); }
+  .browser__url {
+    padding: 5px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-secondary);
+  }
+  .browser__shot {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+  }
+  /* approximate aspect ratios from export (image natural shown 100%) */
+  .browser__shot--admin { aspect-ratio: 1184 / 1290; }
+  .browser__shot--workspace { aspect-ratio: 1101 / 1240; background-size: 100% auto; height: 667px; }
+  .browser__shot--finance { aspect-ratio: 1100 / 708; background-position: top center; }
+
+  .partialnote { display: flex; align-items: flex-start; gap: 8px; padding-top: 4px; }
+  .partialnote svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 3px; }
+  .partialnote span { font-size: 13px; line-height: 1.54; font-style: italic; color: var(--ink-secondary); }
+
+  /* ---------- walls list ---------- */
+  .walls { list-style: none; display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .walls li { display: flex; gap: 12px; }
+  .walls li span:last-child { flex: 1 1 0; font-size: 16px; line-height: 1.56; color: var(--ink-secondary); }
+  .walls__a { font-family: var(--font-mono); font-size: 16px; color: var(--accent); }
+
+  /* ---------- roles table ---------- */
+  .roles { width: 100%; border-top: 1px solid var(--border-subtle); }
+  .roles > div { display: flex; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); }
+  .roles dt { width: 150px; flex-shrink: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--accent); }
+  .roles dd { flex: 1 1 0; margin: 0; font-size: 15px; line-height: 1.53; color: var(--ink-secondary); }
+
+  /* ---------- specialty cards ---------- */
+  .specialties { display: flex; gap: 16px; width: 100%; }
+  .spec-card {
+    flex: 1 1 0;
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 16px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .sec--raised .spec-card { background: var(--surface); }
+  .spec-card__t { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.09em; color: var(--accent); }
+  .spec-card__i { font-size: 13px; line-height: 1.46; color: var(--ink-secondary); }
+
+  /* ---------- architecture bar ---------- */
+  .archbar { display: flex; gap: 6px; width: 100%; padding: 6px 0; flex-wrap: wrap; }
+  .archbar__seg { min-height: 104px; display: flex; flex-direction: column; gap: 6px; justify-content: center; padding: 16px; border-radius: 4px; }
+  .archbar__seg--shared { flex: 3 1 280px; background: var(--accent-soft); border: 1px solid var(--accent-soft); }
+  .archbar__seg--specialty { flex: 1 1 150px; background: var(--accent); border: 1px solid var(--accent); }
+  .archbar__seg--admin { flex: 1 1 150px; background: var(--surface-raised); border: 1px solid var(--border-subtle); }
+  .sec--raised .archbar__seg--admin { background: var(--surface); }
+  .archbar__t { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+  .archbar__d { font-size: 12px; line-height: 1.42; }
+  .archbar__seg--shared .archbar__t, .archbar__seg--shared .archbar__d,
+  .archbar__seg--admin .archbar__t, .archbar__seg--admin .archbar__d { color: var(--ink); }
+  .archbar__seg--specialty .archbar__t, .archbar__seg--specialty .archbar__d { color: var(--ink-inverse); }
+
+  /* ---------- handoff loop ---------- */
+  .flowlbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); }
+  .loop { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; width: 100%; }
+  .loop__step {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 12px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .sec--raised .loop__step { background: var(--surface-raised); }
+  .loop__n { font-family: var(--font-mono); font-size: 11px; color: var(--accent); }
+  .loop__t { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .loop__w { font-family: var(--font-mono); font-size: 11px; color: var(--ink-secondary); }
+  .loop__arr { font-family: var(--font-mono); font-size: 14px; color: var(--contour); padding-left: 8px; }
+  .loop__loop { font-family: var(--font-mono); font-size: 12px; font-style: italic; color: var(--accent); padding-top: 4px; }
+
+  /* ---------- almost shipped box ---------- */
+  .almost {
+    width: 100%;
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 22px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .almost__lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); }
+  .almost__t { font-size: 16px; line-height: 1.62; color: var(--ink); }
+
+  /* ---------- tradeoff cards ---------- */
+  .tradeoff { display: flex; gap: 16px; width: 100%; }
+  .tradeoff__card {
+    flex: 1 1 0;
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 18px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .tradeoff__h { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--ink-secondary); }
+  .tradeoff__h--kept { color: var(--accent); }
+  .tradeoff__i { font-size: 14px; line-height: 1.5; color: var(--ink-secondary); }
+
+  /* ---------- breadth gallery ---------- */
+  .gallery { width: 1100px; max-width: 100%; display: flex; flex-direction: column; gap: 28px; padding-top: 20px; }
+  .gallery__head { display: flex; justify-content: space-between; align-items: center; }
+  .gallery__item { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .gallery__cap { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .gallery__t { font-size: 15px; font-weight: 600; color: var(--ink); }
+  .gallery__r { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--ink-secondary); }
+  .browser__modalbody { position: relative; aspect-ratio: 1100 / 524; overflow: hidden; }
+  .browser__blur { position: absolute; inset: 0; background-size: 100% 100%; filter: blur(3px); }
+  .browser__dim { position: absolute; inset: 0; background: rgba(45, 41, 39, 0.45); }
+  .browser__modal {
+    position: absolute; left: 50%; top: 5%; transform: translateX(-50%);
+    width: 25%; aspect-ratio: 274 / 472;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.33);
+  }
+
+  /* ---------- after callout (shipped fix) ---------- */
+  .after { width: 1100px; max-width: 100%; display: flex; flex-direction: column; gap: 14px; padding-top: 14px; }
+  .after__conn { font-family: var(--font-mono); font-size: 13px; color: var(--contour); text-align: center; }
+  .after__label { display: flex; justify-content: space-between; align-items: center; }
+  .chk { width: 15px; height: 15px; }
+  .shot-frame {
+    width: 100%;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+    overflow: hidden;
+  }
+  .shot-frame__img { width: 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+  .after__cap { font-size: 15px; line-height: 1.6; font-style: italic; color: var(--ink); }
+
+  /* ================= PLATE 04 — body mapping (blue medical UI island) ================= */
+  .browser--blue .browser__bar { background: var(--surface-raised); }
+  .bodymap {
+    background: #F4F7FA;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bm-crumb { display: flex; gap: 9px; align-items: center; }
+  .bm-crumb__a { font-size: 13px; color: #7A8699; }
+  .bm-crumb__b { font-size: 13px; font-weight: 600; color: #2D6FB0; }
+  .bm-card {
+    background: #FFFFFF;
+    border: 1px solid #E8ECF1;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex; flex-direction: column; gap: 13px;
+  }
+  .bm-card__hdr { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .bm-card__title { font-size: 17px; font-weight: 600; color: #1F3A5F; }
+  .bm-card__sub { font-size: 13px; font-weight: 600; color: #3A4658; }
+  .bm-search {
+    padding: 12px 15px;
+    background: #F8FAFC;
+    border: 1px solid #E0E5EC;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #9AA4B2;
+  }
+  .bm-btn { padding: 9px 16px; background: #1F3A5F; color: #FFFFFF; border-radius: 8px; font-size: 13px; font-weight: 500; }
+  .bm-dropdown { width: 139px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E0E5EC; border-radius: 10px; font-size: 14px; color: #33415A; }
+  .bm-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .bm-chip {
+    display: flex; flex-direction: column; gap: 2px; align-items: center;
+    padding: 10px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E0E5EC;
+    border-radius: 9px;
+  }
+  .bm-chip--sel { background: #EAF2FB; border-color: #2D6FB0; }
+  .bm-chip b { font-size: 13px; font-weight: 600; color: #33415A; }
+  .bm-chip--sel b { color: #2D6FB0; }
+  .bm-chip i { font-size: 11px; font-style: normal; color: #8A94A6; }
+  .bm-viz { display: flex; gap: 24px; flex-wrap: wrap; }
+  .bm-bodybox {
+    flex: 1 1 380px;
+    min-height: 520px;
+    position: relative;
+    background: #FBFCFD;
+    border: 1px solid #EDF0F4;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .bm-centerline { position: absolute; left: 50%; top: 24px; bottom: 24px; width: 1px; background: #DCE3EC; }
+  .bm-bodyimg { position: absolute; left: 50%; top: 22px; transform: translateX(-50%); width: 278px; max-width: 70%; height: 478px; background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 4px; }
+  .bm-pin { position: absolute; transform: translate(-50%, -50%); border: 2px solid #FFFFFF; border-radius: 50%; }
+  .bm-selring { position: absolute; transform: translate(-50%, -50%); width: 31px; height: 31px; border: 2px solid #1F3A5F; border-radius: 50%; }
+  .bm-legend {
+    flex: 1 1 280px;
+    display: flex; flex-direction: column; gap: 13px;
+    padding: 20px;
+    background: #F8FAFC;
+    border: 1px solid #E8ECF1;
+    border-radius: 10px;
+  }
+  .bm-legend__t { font-size: 13px; font-weight: 600; color: #3A4658; }
+  .bm-legend__row { display: flex; align-items: center; gap: 9px; font-size: 13px; color: #4A5568; }
+  .bm-legend__row i { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .bm-hint { margin-top: auto; padding: 13px; background: #E8F5F3; border-radius: 8px; font-size: 11px; line-height: 1.55; color: #4A6B66; }
+
+  /* ---------- status 3-col ---------- */
+  .status { display: flex; gap: 20px; width: 100%; }
+  .status__col {
+    flex: 1 1 0;
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .status__h { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); }
+  .status__h--prog { color: var(--ink); }
+  .status__h--todo { color: var(--ink-secondary); }
+  .status__i { display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: var(--ink-secondary); }
+  .status__m { font-family: var(--font-mono); font-size: 13px; flex-shrink: 0; color: var(--ink-secondary); }
+  .status__m--done { color: var(--accent); }
+  .status__m--prog { color: var(--ink); }
+
+  /* ---------- lessons ---------- */
+  .lessons { list-style: none; width: 100%; display: flex; flex-direction: column; }
+  .lessons li { display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-subtle); }
+  .lessons li:first-child { border-top: 1px solid var(--border-subtle); }
+  .lessons__n { width: 48px; flex-shrink: 0; font-family: var(--font-display); font-size: 30px; font-weight: 500; color: var(--accent); line-height: 1; }
+  .lessons li span:last-child { flex: 1 1 0; font-size: 17px; line-height: 1.58; color: var(--ink-secondary); }
+
+  /* ---------- next territory ---------- */
+  .nextterr {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 52px 64px;
+    max-width: 1312px;
+    margin-inline: auto;
+    background: var(--surface-raised);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .nextterr:hover .nextterr__arr { transform: translateX(6px); }
+  .nextterr__l { display: flex; flex-direction: column; gap: 5px; }
+  .nextterr__k { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; color: var(--accent); }
+  .nextterr__s { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--ink-secondary); }
+  .nextterr__r { display: flex; align-items: center; gap: 14px; }
+  .nextterr__mark { width: 22px; height: 22px; }
+  .nextterr__name { font-family: var(--font-display); font-size: 46px; font-weight: 500; color: var(--ink); }
+  .nextterr__arr { font-family: var(--font-display); font-size: 40px; font-weight: 500; color: var(--accent); transition: transform 0.15s ease; }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1200px) {
+    .plate--wide, .gallery, .after { width: 100%; }
+  }
+
+  @media (max-width: 1024px) {
+    .header__title { font-size: 68px; }
+  }
+
+  @media (max-width: 900px) {
+    .row { flex-direction: column; gap: 28px; }
+    .rail { flex-direction: row; align-items: baseline; gap: 12px; width: 100%; }
+    .rail__num { font-size: 40px; }
+    .main { width: 100%; }
+    .survey__row { flex-direction: column; gap: 18px; }
+    .specialties, .tradeoff, .status { flex-direction: column; }
+    .browser__shot--workspace { height: auto; }
+    .bm-viz { flex-direction: column; }
+  }
+
+  @media (max-width: 720px) {
+    .sec__inner { padding-top: 56px; padding-bottom: 56px; }
+    .header__title { font-size: 46px; }
+    .tri--lg { width: 28px; height: 28px; }
+    .header__tagline { font-size: 22px; }
+    .main__h { font-size: 24px; }
+    .principle__q { font-size: 24px; }
+    .fieldnote__q { font-size: 19px; }
+    .nextterr { padding: 40px 24px; flex-direction: column; align-items: flex-start; gap: 18px; }
+    .nextterr__name { font-size: 36px; }
+    .roles > div { flex-direction: column; gap: 4px; }
+    .roles dt { width: auto; }
+  }
+
+  @media (max-width: 420px) {
+    .header__title { font-size: 38px; }
+  }
+</style>

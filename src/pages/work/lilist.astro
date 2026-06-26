@@ -1,0 +1,1531 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Colophon from "../../components/Colophon.astro";
+---
+
+<Base title="Lilist — Case Study — Jihan Raihana">
+  <Nav />
+
+  <!-- ================= TERRITORY HEADER ================= -->
+  <section class="th">
+    <div class="wrap th__inner">
+      <div class="th__contour" aria-hidden="true" data-parallax="0.12">
+        <span style="width:660px;height:660px;left:0;top:0;"></span>
+        <span style="width:560px;height:560px;left:50px;top:50px;"></span>
+        <span style="width:460px;height:460px;left:100px;top:100px;"></span>
+        <span style="width:360px;height:360px;left:150px;top:150px;"></span>
+        <span style="width:260px;height:260px;left:200px;top:200px;"></span>
+        <span style="width:160px;height:160px;left:250px;top:250px;"></span>
+      </div>
+
+      <div class="th__breadcrumb">
+        <a href="/#work" class="th__back">← BACK TO MAP</a>
+        <span class="th__idx">TERRITORY 02 / 02</span>
+      </div>
+
+      <div class="th__titlerow">
+        <svg class="th__sym" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+        <h1 class="th__title">Lilist</h1>
+      </div>
+
+      <p class="th__tagline">The app I designed twice — and the clever idea I had to kill.</p>
+
+      <p class="th__intro">
+        A personal finance app for Indonesian households. V1 shipped to the Play Store in 2025.
+        After three friends couldn't use it without my help, I rebuilt it — then caught myself
+        making the same mistake again, and started over a second time.
+      </p>
+
+      <div class="th__survey">
+        <div class="th__metarow">
+          <div class="meta">
+            <span class="meta__k">ROLE</span>
+            <span class="meta__v">UI/UX Designer — research, IA, UI, design system, hand-off</span>
+          </div>
+          <div class="meta">
+            <span class="meta__k">TEAM</span>
+            <span class="meta__v">Me (design) + my husband (Flutter dev) · Sirkala</span>
+          </div>
+          <div class="meta">
+            <span class="meta__k">TIMELINE</span>
+            <span class="meta__v">First sketch 2021 · V1 May 2025 · V2 June 2026</span>
+          </div>
+        </div>
+        <div class="th__metarow">
+          <div class="meta">
+            <span class="meta__k">STATUS</span>
+            <span class="meta__v">V2 design complete — ready for development</span>
+          </div>
+          <div class="meta">
+            <span class="meta__k">PLATFORM</span>
+            <span class="meta__v">Flutter · local-first (SQLite/Isar) · low-end Android</span>
+          </div>
+          <div class="meta">
+            <span class="meta__k">TOOLS</span>
+            <span class="meta__v">Pencil (AI-augmented) · token design system · Nunito</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLATE 01 — V1 → V2 -->
+      <figure class="hero-plate">
+        <div class="hero-plate__label">
+          <span class="mono-accent">PLATE 01 — DESIGNED TWICE: V1 → V2</span>
+          <svg class="dot" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+        </div>
+        <div class="hero-plate__panel">
+          <div class="hero-plate__col">
+            <div class="hero-plate__img" style="background-image:url('/images/Lilistv1mockup.png')"></div>
+            <span class="hero-plate__cap">V1 · 2025 — FAILED ITS FIRST USER TEST</span>
+          </div>
+          <span class="hero-plate__arr">→</span>
+          <div class="hero-plate__col">
+            <div class="hero-plate__img hero-plate__img--v2" style="background-image:url('/images/Lilistv2mockup.png')"></div>
+            <span class="hero-plate__cap hero-plate__cap--v2">V2 · 2026 — REBUILT, TWICE</span>
+          </div>
+        </div>
+        <figcaption class="hero-plate__foot">
+          <span>LILIST · SHOPPING-LIST + EXPENSE, FOR HOUSEHOLDS</span>
+          <span>FIG. 01</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= 01 ORIGIN ================= -->
+  <section class="jr jr--raised">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(01)</span><span class="masthead__t">ORIGIN</span></span>
+        <span class="masthead__r">FIELD NOTE — 2021</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">01</span><span class="rail__lbl">ORIGIN</span></div>
+        <div class="main">
+          <h2 class="main__h">A pregnant graphic designer opens Figma for the first time</h2>
+          <p class="main__p">
+            The first version of Lilist existed in 2021. I was pregnant, about to leave freelance
+            work, and curious about Figma — a tool I'd never touched as a graphic designer.
+          </p>
+          <p class="main__p">
+            I designed four frames: onboarding, login, home, and a planning screen. No user flows.
+            No principles. I didn't know what UX even meant. I just wanted an app to help me plan
+            groceries, because I was about to be responsible for a household.
+          </p>
+          <div class="fieldnote">
+            Then my son was born, and Lilist sat in a forgotten Figma file for three years.
+          </div>
+          <p class="main__p">
+            In 2024, back from a career break, I reopened that file. The work was unrecognizably
+            bad — but the problem was still real, and I now had three years of life as a household
+            manager to understand it. Lilist became how I taught myself what I'd skipped: how
+            digital products actually get built.
+          </p>
+          <div class="figv0">
+            <span class="mono-accent">V0 — THE FIRST FOUR FRAMES, 2021</span>
+            <div class="figv0__row">
+              <div class="figv0__img" style="background-image:url('/images/V0Lilist1.png')"></div>
+              <div class="figv0__img" style="background-image:url('/images/v0-mylist.png')"></div>
+              <p class="figv0__cap">
+                Made during pregnancy — the first time I ever opened Figma. No flows, no
+                principles; I didn't yet know what UX even meant. Built on an old Samsung, so the
+                proportions are rough. The screenshot is left exactly as it was.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 WHY THIS PROJECT ================= -->
+  <section class="jr jr--surface">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(02)</span><span class="masthead__t">WHY THIS PROJECT</span></span>
+        <span class="masthead__r">SCOPE DISCIPLINE</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">02</span><span class="rail__lbl">ORIGIN</span></div>
+        <div class="main">
+          <h2 class="main__h">Why Lilist, and not my more ambitious project</h2>
+          <p class="main__p">
+            Before Lilist, my husband and I tried a more ambitious product — JAKA, a multi-device
+            POS system. It was my first attempt at a full UX design with flows and a design
+            system, and it taught me, painfully, that ambition without scope discipline doesn't
+            ship.
+          </p>
+          <p class="main__p">
+            We paused JAKA. Around then Sirkala was born — the small studio we created to focus on
+            lightweight daily apps we could realistically ship with two people and no funding.
+          </p>
+          <div class="fieldnote">
+            Lilist answered a smaller question: what's the simplest product we can actually
+            finish? So Lilist became the one that reached a Play Store listing.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 V1 — WHAT I SHIPPED ================= -->
+  <section class="jr jr--raised">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(03)</span><span class="masthead__t">V1 — WHAT I SHIPPED</span></span>
+        <span class="masthead__r">PLAY STORE · MAY 2025</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">03</span><span class="rail__lbl">V1</span></div>
+        <div class="main">
+          <h2 class="main__h">V1 — what I shipped</h2>
+          <p class="main__p">
+            V1 launched on the Play Store in May 2025, built around one opinionated flow:
+          </p>
+          <div class="flow">
+            <span class="flow__step">Plan a list</span>
+            <span class="flow__arr">→</span>
+            <span class="flow__step">Shop</span>
+            <span class="flow__arr">→</span>
+            <span class="flow__step">Log expenses</span>
+            <span class="flow__arr">→</span>
+            <span class="flow__step">See report</span>
+          </div>
+          <p class="main__p">
+            It was usable — if you used it exactly the way I expected. This was my first
+            end-to-end product cycle, and I learned what “end-to-end” really means: research,
+            wireframes, a design system, hand-off, sprint planning in Jira, Play Store submission,
+            and the strange anticlimax of watching your app go live.
+          </p>
+          <div class="fieldnote">
+            I was proud of V1. I was about to find out it didn't work.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 USER TESTING ================= -->
+  <section class="jr jr--surface">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(04)</span><span class="masthead__t">USER TESTING — THREE FRIENDS</span></span>
+        <span class="masthead__r">THE WRONG PERSON</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">04</span><span class="rail__lbl">TESTING</span></div>
+        <div class="main">
+          <h2 class="main__h">The day I learned I'd designed for the wrong person</h2>
+          <p class="main__p">
+            I gave V1 to three friends. No introduction beyond “try this shopping list app, tell
+            me what you think.” All three got stuck — not on a button, on the premise.
+          </p>
+          <div class="cards2">
+            <div class="card">
+              <span class="card__h">WHAT THEY EXPECTED</span>
+              <p class="card__d">
+                An app to track what I spent on groceries. I open it, log what I bought, done.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card__h card__h--accent">WHAT LILIST DEMANDED</span>
+              <p class="card__d">
+                First plan a list. Then shop. Then match what you actually bought against what you
+                planned.
+              </p>
+            </div>
+          </div>
+          <blockquote class="pullquote">
+            <p class="pullquote__q">“I thought this was a tracker, not a planner.”</p>
+            <span class="pullquote__a">— ALL THREE OF THEM, IN DIFFERENT WORDS</span>
+          </blockquote>
+          <p class="main__p">
+            I had assumed everyone shops like me — with a list. Most people don't. They walk in,
+            buy what they need, and want to know later if they overspent. My friends weren't
+            wrong. I was.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 THE REDESIGN ================= -->
+  <section class="jr jr--raised">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(05)</span><span class="masthead__t">THE REDESIGN — AND THE IDEA I KILLED</span></span>
+        <span class="masthead__r">CENTERPIECE</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">05</span><span class="rail__lbl">REDESIGN</span></div>
+        <div class="main">
+          <h2 class="main__h">The redesign, and the clever idea I had to kill</h2>
+          <p class="main__p">
+            My first instinct was to serve both kinds of shopper. I sketched two personas —
+            Planners and Budgeters — and built one app with two modes, switched by a single
+            “Planning” toggle.
+          </p>
+          <div class="cards2">
+            <div class="card card--surface">
+              <span class="card__h card__h--accent">THE PLANNERS</span>
+              <span class="card__i">· Make a list first</span>
+              <span class="card__i">· Want planned vs. actual</span>
+              <span class="card__i">· Need structure</span>
+            </div>
+            <div class="card card--surface">
+              <span class="card__h card__h--accent">THE BUDGETERS</span>
+              <span class="card__i">· Shop spontaneously</span>
+              <span class="card__i">· Just want to track spending</span>
+              <span class="card__i">· Want speed</span>
+            </div>
+          </div>
+          <p class="main__p">
+            On paper it looked clever. Building it out, I got uncomfortable. To switch modes well,
+            the user first had to know which kind of shopper they were — and declare it. I had
+            removed the forced flow and replaced it with a forced identity. Same original sin, new
+            costume.
+          </p>
+
+          <div class="killed">
+            <span class="killed__l">✕ THE CLEVER FIX I SCRAPPED — A MODE TOGGLE</span>
+            <div class="killed__box">
+              <span class="killed__q">WHAT KIND OF SHOPPER ARE YOU?</span>
+              <div class="killed__pill">
+                <span class="killed__seg killed__seg--on">Planner</span>
+                <span class="killed__seg">Budgeter</span>
+              </div>
+              <span class="killed__stamp">✕ SCRAPPED</span>
+            </div>
+            <p class="killed__cap">
+              My first redesign made people declare an identity before they could do anything —
+              the same forced choice, wearing a costume. So I killed the toggle.
+            </p>
+          </div>
+
+          <div class="fieldnote">
+            My friends never said “I'm a Budgeter.” They said “I just want to log what I
+            bought.”
+          </div>
+
+          <div class="principle">
+            <span class="principle__lbl">THE REAL FIX</span>
+            <p class="principle__q">
+              The problem was never two personas. It was the entry point forcing a behavior before
+              the user did anything — so I killed the choice.
+            </p>
+          </div>
+
+          <div class="doors">
+            <div class="doors__row">
+              <div class="door">
+                <span class="door__k">DOOR 01</span>
+                <span class="door__t">Plan ahead</span>
+                <p class="door__d">Make a shopping plan or a bill reminder.</p>
+              </div>
+              <div class="door">
+                <span class="door__k">DOOR 02</span>
+                <span class="door__t">Record after</span>
+                <p class="door__d">
+                  Snap the receipt or quick-log what you bought; Lilist reads it and quietly
+                  matches it to a plan if one exists.
+                </p>
+              </div>
+            </div>
+            <span class="doors__converge">↓ ↓</span>
+            <div class="doors__home">
+              <span class="doors__home-k">THE SAME HOME</span>
+              <p class="doors__home-t">
+                Beranda — today's plans + recent spending, one glance. No mode, no toggle, no
+                interview.
+              </p>
+            </div>
+          </div>
+
+          <p class="main__p">
+            So V2 makes the list the quiet unit underneath everything, and offers two equally easy
+            ways in. Whichever door you walk through, you land in the same home — the app does the
+            reconciling in the background instead of making the person do it.
+          </p>
+
+          <span class="mono-accent mono-accent--wide">WHAT V2 BECAME — 4 TABS, ONE COHERENT PRODUCT</span>
+          <div class="tabs">
+            <div class="tabs__row">
+              <span class="tabs__k">BERANDA</span>
+              <span class="tabs__v">Home — today's plans + recent spending, one glance</span>
+            </div>
+            <div class="tabs__row">
+              <span class="tabs__k">RENCANA</span>
+              <span class="tabs__v">Plan — a forward calendar of shopping plans &amp; bills</span>
+            </div>
+            <div class="tabs__row">
+              <span class="tabs__k">BUDGET</span>
+              <span class="tabs__v">Envelope budgeting tied to payday (not a dead date), with savings that accumulate and a no-double-counting withdrawal flow</span>
+            </div>
+            <div class="tabs__row">
+              <span class="tabs__k">LAPORAN</span>
+              <span class="tabs__v">Report — where your money went, framed as awareness, never judgment</span>
+            </div>
+          </div>
+
+          <!-- PLATE 02 — Onboarding -->
+          <div class="devcard">
+            <div class="devcard__text">
+              <span class="mono-accent">PLATE 02 — PHOTO-LED ONBOARDING</span>
+              <p class="devcard__p">
+                V2 opens warm and photo-led — honest about the two ways in: plan ahead, or just
+                record after. No mode, no toggle, no interview, just a friendly welcome into the
+                same home.
+              </p>
+              <span class="badge">
+                <svg viewBox="0 0 14 14" aria-hidden="true"><polygon points="3,2 12,7 3,12" fill="var(--accent)" /></svg>
+                LIVE SIMULATOR
+              </span>
+              <span class="devcard__note">live · auto-plays 3 slides</span>
+            </div>
+            <div class="simframe simframe--onb">
+              <iframe src="/sims/onboarding.html" title="Simulator onboarding Lilist" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- PLATE 03 — Scan -->
+          <div class="devcard devcard--reverse">
+            <div class="simframe simframe--scan">
+              <iframe src="/sims/scan.html" title="Simulator scan struk Lilist" loading="lazy"></iframe>
+            </div>
+            <div class="devcard__text">
+              <span class="mono-accent">PLATE 03 — RECORD AFTER · SCAN</span>
+              <p class="devcard__p">
+                “Record after” only works if it's effortless. On-device OCR + an LLM pass turn a
+                messy receipt into clean items, matched to a plan if one exists — pennies per
+                scan, viable for a two-person studio.
+              </p>
+              <span class="badge">
+                <svg viewBox="0 0 14 14" aria-hidden="true"><polygon points="3,2 12,7 3,12" fill="var(--accent)" /></svg>
+                LIVE SIMULATOR
+              </span>
+              <span class="devcard__note">snap → read → matched</span>
+            </div>
+          </div>
+
+          <p class="main__p">
+            The design system is a teal-led token set in Nunito, with glass effects used as an
+            accent only — a deliberate choice for readability and performance on the low-end
+            Android phones our users actually carry.
+          </p>
+
+          <!-- PLATE 04 — Design system -->
+          <div class="ds">
+            <div class="ds__label">
+              <span class="mono-accent">PLATE 04 — DESIGN SYSTEM · TEAL TOKENS, NUNITO</span>
+              <svg class="dot" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+            </div>
+            <span class="badge">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2 L7 12 M4 5 L7 2 L10 5 M4 9 L7 12 L10 9" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              SCROLLABLE — FULL DESIGN SYSTEM IN BUILD
+            </span>
+            <div class="ds__frame">
+              <div class="ds__crop">
+                <div class="ds__img" style="background-image:url('/images/lilist-designsystem.png')"></div>
+              </div>
+              <div class="ds__fade"></div>
+            </div>
+            <p class="ds__cap">
+              A token-based system in Nunito — palette, type, components, units and states,
+              consistent across every screen (glass used only as accent, for the low-end Android
+              phones our users carry). Excerpt shown; the full board scrolls in the build.
+            </p>
+          </div>
+
+          <div class="fieldnote">
+            This was the most systemic design work I'd done. It taught me to treat a screen as a
+            system of states — and to treat my own clever solution as a hypothesis, not a
+            trophy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 HONEST STATUS ================= -->
+  <section class="jr jr--surface">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(06)</span><span class="masthead__t">HONEST STATUS</span></span>
+        <span class="masthead__r">ONE THING AT A TIME</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">06</span><span class="rail__lbl">STATUS</span></div>
+        <div class="main">
+          <h2 class="main__h">Honest status</h2>
+          <div class="cards2">
+            <div class="card">
+              <span class="card__h card__h--accent">V1 — STILL LIVE</span>
+              <p class="card__d">
+                Original flow that didn't survive contact with users, built before we adopted
+                AI-augmented workflows. I'm leaving it live and unmodified — hiding it would
+                dishonestly polish a learning project.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card__h card__h--accent">V2 — COMPLETE DESIGN</span>
+              <p class="card__d">
+                Every screen and state, from photo-led onboarding through all four tabs,
+                budgeting, settings, receipt scanning, and edge cases — ready for development.
+              </p>
+            </div>
+          </div>
+          <p class="main__p">
+            We paused Lilist in late 2025 to focus on Synetic. With Synetic's MVP 1 handed off and
+            now in early testing, I finished the Lilist V2 design in a focused push — and it's in
+            early development with my husband now, heading to a Play Store update. No fixed
+            timeline: Synetic, a live clinic, comes first. Small team, one real thing at a time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 07 LESSONS ================= -->
+  <section class="jr jr--raised">
+    <div class="wrap jr__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(07)</span><span class="masthead__t">WHAT THIS PROJECT GAVE ME</span></span>
+        <span class="masthead__r">LESSONS</span>
+      </div>
+      <div class="jr__body">
+        <div class="rail"><span class="rail__num">07</span><span class="rail__lbl">LESSONS</span></div>
+        <div class="main">
+          <h2 class="main__h">What this project gave me</h2>
+          <div class="lesson">
+            <span class="lesson__n">01</span>
+            <p class="lesson__t">
+              The full cycle from blank file to Play Store listing — completed once, with all its
+              mistakes.
+            </p>
+          </div>
+          <div class="lesson">
+            <span class="lesson__n">02</span>
+            <p class="lesson__t">
+              The discipline to redesign instead of defending V1 — and then to redesign my
+              redesign when the clever fix was secretly the old mistake.
+            </p>
+          </div>
+          <div class="lesson">
+            <span class="lesson__n">03</span>
+            <p class="lesson__t">
+              A token-based design-system practice, and the habit of designing for real
+              constraints: low-end Android, pennies per scan, two people, no funding.
+            </p>
+          </div>
+          <div class="lesson">
+            <span class="lesson__n">04</span>
+            <p class="lesson__t">
+              A fast AI-augmented workflow that let one person take a whole product from re-think
+              to a complete, consistent system.
+            </p>
+          </div>
+          <div class="lesson">
+            <span class="lesson__n">05</span>
+            <p class="lesson__t">
+              The lesson under all of it: real users will always show you what you cannot see
+              alone — including when your “solution” is just your blind spot in disguise.
+            </p>
+          </div>
+          <p class="closing">
+            Lilist isn't my biggest project. It's the one that turned me from a graphic designer
+            into a product designer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEXT TERRITORY ================= -->
+  <a href="/about" class="next">
+    <div class="wrap next__inner">
+      <div class="next__l">
+        <span class="next__k">UP NEXT</span>
+        <span class="next__s">THE PERSON BEHIND THE MAP</span>
+      </div>
+      <div class="next__r">
+        <svg class="next__compass" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+        </svg>
+        <span class="next__name">About</span>
+        <span class="next__arr">→</span>
+      </div>
+    </div>
+  </a>
+
+  <Colophon />
+</Base>
+
+<style>
+  /* ---------- shared small bits ---------- */
+  .mono-accent {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .mono-accent--wide {
+    letter-spacing: 0.12em;
+  }
+  .dot {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ---------- TERRITORY HEADER ---------- */
+  .th {
+    background: var(--surface);
+    overflow: hidden;
+    position: relative;
+  }
+  .th__inner {
+    padding-top: 52px;
+    padding-bottom: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    position: relative;
+  }
+  .th__contour {
+    position: absolute;
+    top: -220px;
+    right: -160px;
+    width: 660px;
+    height: 660px;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .th__contour span {
+    position: absolute;
+    border: 1px solid var(--contour);
+    border-radius: 50%;
+  }
+  .th > .wrap > *:not(.th__contour) {
+    position: relative;
+    z-index: 1;
+  }
+  .th__breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .th__back {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .th__back:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .th__idx {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-secondary);
+  }
+  .th__titlerow {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-top: 12px;
+  }
+  .th__sym {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .th__title {
+    font-family: var(--font-display);
+    font-size: 86px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .th__tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.21;
+    color: var(--ink);
+    max-width: 880px;
+  }
+  .th__intro {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    max-width: 740px;
+  }
+
+  /* survey data */
+  .th__survey {
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .th__metarow {
+    display: flex;
+    gap: 32px;
+    padding: 18px 0;
+  }
+  .meta {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .meta__k {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+  }
+  .meta__v {
+    font-size: 14px;
+    line-height: 1.43;
+    color: var(--ink);
+  }
+
+  /* hero plate (PLATE 01) */
+  .hero-plate {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+  }
+  .hero-plate__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero-plate__panel {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 32px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+  }
+  .hero-plate__col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .hero-plate__img {
+    width: 100%;
+    aspect-ratio: 601 / 490;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .hero-plate__img--v2 {
+    aspect-ratio: 626 / 500;
+  }
+  .hero-plate__cap {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-secondary);
+  }
+  .hero-plate__cap--v2 {
+    color: var(--mark-consumer);
+  }
+  .hero-plate__arr {
+    font-family: var(--font-display);
+    font-size: 34px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .hero-plate__foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-secondary);
+  }
+
+  /* ---------- JOURNAL SECTIONS ---------- */
+  .jr--surface {
+    background: var(--surface);
+  }
+  .jr--raised {
+    background: var(--surface-raised);
+  }
+  .jr__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    gap: 16px;
+  }
+  .masthead__l {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .masthead__num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .masthead__t,
+  .masthead__r {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--ink-secondary);
+  }
+
+  .jr__body {
+    display: flex;
+    gap: 72px;
+    align-items: flex-start;
+  }
+  .rail {
+    width: 140px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rail__num {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .rail__lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--ink-secondary);
+  }
+  .main {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: flex-start;
+  }
+  .main__h {
+    font-family: var(--font-display);
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .main__p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-secondary);
+  }
+
+  /* field note callout */
+  .fieldnote {
+    border-left: 2px solid var(--accent);
+    padding: 6px 0 6px 18px;
+    font-size: 16px;
+    line-height: 1.63;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* V0 figure */
+  .figv0 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .figv0__row {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .figv0__img {
+    width: 203px;
+    height: 361px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    box-shadow: 0 8px 22px rgba(45, 41, 38, 0.2);
+  }
+  .figv0__cap {
+    flex: 1 1 0;
+    font-size: 15px;
+    line-height: 1.53;
+    font-style: italic;
+    color: var(--ink-secondary);
+  }
+
+  /* V1 flow chips */
+  .flow {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .flow__step {
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .jr--surface .flow__step {
+    background: var(--surface-raised);
+  }
+  .flow__arr {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+  }
+
+  /* two-up cards */
+  .cards2 {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    width: 100%;
+  }
+  .card {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .jr--raised .card {
+    background: var(--surface);
+  }
+  .card--surface {
+    background: var(--surface) !important;
+    gap: 8px;
+  }
+  .card__h {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--ink-secondary);
+  }
+  .card__h--accent {
+    color: var(--accent);
+  }
+  .card__d {
+    font-size: 15px;
+    line-height: 1.53;
+    color: var(--ink-secondary);
+  }
+  .card__i {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-secondary);
+  }
+
+  /* pull quote */
+  .pullquote {
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 28px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .pullquote__q {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .pullquote__a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-secondary);
+  }
+
+  /* killed toggle */
+  .killed {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 600px;
+    width: 100%;
+  }
+  .killed__l {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--mark-health);
+  }
+  .killed__box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding: 30px 24px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+  }
+  .jr--raised .killed__box {
+    background: var(--surface);
+  }
+  .killed__q {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-secondary);
+  }
+  .killed__pill {
+    display: flex;
+    padding: 4px;
+    border: 1.5px solid var(--ink-secondary);
+    border-radius: 100px;
+    opacity: 0.5;
+  }
+  .killed__seg {
+    padding: 9px 22px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-secondary);
+  }
+  .killed__seg--on {
+    background: var(--ink-secondary);
+    color: var(--ink-inverse);
+  }
+  .killed__stamp {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--mark-health);
+  }
+  .killed__cap {
+    font-size: 15px;
+    line-height: 1.53;
+    font-style: italic;
+    color: var(--ink-secondary);
+  }
+
+  /* principle pull-quote */
+  .principle {
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .principle__lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    color: var(--accent);
+  }
+  .principle__q {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.19;
+    color: var(--ink);
+  }
+
+  /* two doors → one home */
+  .doors {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .doors__row {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .door {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+  }
+  .door__k {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+  }
+  .door__t {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .door__d {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-secondary);
+  }
+  .doors__converge {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--contour);
+    text-align: center;
+  }
+  .doors__home {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    padding: 20px;
+    background: var(--accent-soft);
+    border-radius: 4px;
+  }
+  .doors__home-k {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    color: var(--accent);
+  }
+  .doors__home-t {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+    text-align: center;
+  }
+
+  /* tabs list */
+  .tabs {
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+  }
+  .tabs__row {
+    display: flex;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+  }
+  .tabs__k {
+    width: 120px;
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .tabs__v {
+    flex: 1 1 0;
+    font-size: 15px;
+    line-height: 1.53;
+    color: var(--ink-secondary);
+  }
+
+  /* device cards (PLATE 02 / 03) */
+  .devcard {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    padding: 28px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    width: 100%;
+  }
+  .jr--raised .devcard {
+    background: var(--surface);
+  }
+  .devcard__text {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .devcard__p {
+    font-size: 16px;
+    line-height: 1.63;
+    color: var(--ink-secondary);
+  }
+  .devcard__note {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--ink-secondary);
+  }
+  .device {
+    width: 185px;
+    flex-shrink: 0;
+    aspect-ratio: 185 / 360;
+    padding: 4px;
+    background: var(--ink);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+  }
+  .device__screen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    border-radius: 21px;
+  }
+  /* simulator live (iframe phone) — ukuran asli HP diperkecil via scale */
+  .simframe {
+    flex-shrink: 0;
+    width: calc(var(--sw) * var(--scale) * 1px);
+    height: calc(var(--sh) * var(--scale) * 1px);
+    border-radius: 22px;
+    overflow: hidden;
+    background: #111827;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.14);
+  }
+  .simframe iframe {
+    width: calc(var(--sw) * 1px);
+    height: calc(var(--sh) * 1px);
+    border: 0;
+    display: block;
+    transform: scale(var(--scale));
+    transform-origin: top left;
+  }
+  .simframe--onb {
+    --sw: 340;
+    --sh: 640;
+    --scale: 0.92;
+  }
+  .simframe--scan {
+    --sw: 410;
+    --sh: 876;
+    --scale: 0.78;
+  }
+  @media (max-width: 400px) {
+    .simframe--onb { --scale: 0.8; }
+    .simframe--scan { --scale: 0.66; }
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px;
+    background: var(--accent-soft);
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .badge svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  /* design system plate (PLATE 04) */
+  .ds {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .ds__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ds__frame {
+    position: relative;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+    overflow: hidden;
+  }
+  .jr--raised .ds__frame {
+    background: var(--surface);
+  }
+  .ds__crop {
+    position: relative;
+    width: 100%;
+    height: 640px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .ds__crop::-webkit-scrollbar {
+    width: 8px;
+  }
+  .ds__crop::-webkit-scrollbar-thumb {
+    background: var(--contour);
+    border-radius: 4px;
+  }
+  .ds__img {
+    width: 100%;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* image is ~4.7x taller than wide at full bleed */
+    aspect-ratio: 1098 / 5210;
+  }
+  .ds__fade {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(239, 235, 221, 0) 0%, var(--surface-raised) 100%);
+  }
+  .jr--raised .ds__fade {
+    background: linear-gradient(180deg, rgba(245, 242, 233, 0) 0%, var(--surface) 100%);
+  }
+  .ds__cap {
+    font-size: 14px;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--ink-secondary);
+  }
+
+  /* lessons */
+  .lesson {
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+    width: 100%;
+  }
+  .lesson__n {
+    width: 48px;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .lesson__t {
+    flex: 1 1 0;
+    font-size: 17px;
+    line-height: 1.59;
+    color: var(--ink-secondary);
+  }
+  .closing {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.27;
+    color: var(--ink);
+  }
+
+  /* ---------- NEXT TERRITORY ---------- */
+  .next {
+    display: block;
+    background: var(--surface);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .next:hover .next__arr {
+    transform: translateX(6px);
+  }
+  .next__inner {
+    padding-top: 52px;
+    padding-bottom: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .next__l {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .next__k {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.13em;
+    color: var(--accent);
+  }
+  .next__s {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-secondary);
+  }
+  .next__r {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .next__compass {
+    width: 22px;
+    height: 22px;
+  }
+  .next__name {
+    font-family: var(--font-display);
+    font-size: 46px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .next__arr {
+    font-family: var(--font-display);
+    font-size: 40px;
+    color: var(--accent);
+    transition: transform 0.15s ease;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1024px) {
+    .th__title {
+      font-size: 68px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .jr__body {
+      flex-direction: column;
+      gap: 28px;
+    }
+    .rail {
+      width: 100%;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .rail__num {
+      font-size: 44px;
+    }
+    .main {
+      max-width: 100%;
+      width: 100%;
+    }
+    .th__metarow {
+      flex-direction: column;
+      gap: 18px;
+    }
+    .hero-plate__panel {
+      flex-direction: column;
+    }
+    .hero-plate__arr {
+      transform: rotate(90deg);
+    }
+    .figv0__row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .ds__crop {
+      height: 1000px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .th__title {
+      font-size: 52px;
+    }
+    .th__tagline {
+      font-size: 22px;
+    }
+    .th__intro {
+      font-size: 16px;
+    }
+    .main__h {
+      font-size: 26px;
+    }
+    .pullquote__q {
+      font-size: 26px;
+    }
+    .principle__q {
+      font-size: 24px;
+    }
+    .closing {
+      font-size: 22px;
+    }
+    .next__name {
+      font-size: 34px;
+    }
+    .cards2,
+    .doors__row {
+      flex-direction: column;
+    }
+    .devcard,
+    .devcard--reverse {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .tabs__row {
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tabs__k {
+      width: auto;
+    }
+    .ds__crop {
+      height: 720px;
+    }
+    .next__inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .th__title {
+      font-size: 42px;
+    }
+    .th__sym {
+      width: 28px;
+      height: 28px;
+    }
+  }
+</style>

@@ -1,0 +1,166 @@
+---
+// Footer "Colophon" — ajakan kontak, muncul di semua halaman.
+const email = "jihanraihana20@gmail.com";
+const linkedin = "https://www.linkedin.com/in/jihanraihana";
+---
+<footer class="colophon" id="colophon">
+  <div class="wrap colophon__inner">
+    <!-- Ikon kompas -->
+    <svg class="colophon__compass" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+    </svg>
+
+    <div class="colophon__masthead">
+      <span><span class="colophon__section">§</span> <span class="colophon__label">COLOPHON — GET IN TOUCH</span></span>
+      <span class="colophon__label">GMT+7 · OPEN TO REMOTE</span>
+    </div>
+
+    <h2 class="colophon__heading">Let's build something honest together.</h2>
+    <p class="colophon__sub">
+      I'm looking for a full-time remote product design role where I can learn
+      alongside an experienced team — and keep doing end-to-end work that ships.
+    </p>
+
+    <div class="colophon__actions">
+      <a href={`mailto:${email}`} class="btn btn-accent colophon__btn-email">{email}</a>
+      <a href={linkedin} target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
+      <a href="/cv.pdf" download="Jihan-Raihana-CV.pdf" class="btn btn-ghost">Download CV ↓</a>
+    </div>
+
+    <div class="colophon__divider"></div>
+
+    <div class="colophon__legend">
+      <span class="colophon__label">LEGEND</span>
+      <span class="colophon__key">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+        Healthcare
+      </span>
+      <span class="colophon__key">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+        Consumer
+      </span>
+      <span class="colophon__key">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,7 7,13 1,7" fill="var(--mark-brand)" /></svg>
+        Brand
+      </span>
+    </div>
+
+    <div class="colophon__foot">
+      <span class="colophon__label">06°17′S 106°43′E · © 2026 JIHAN RAIHANA</span>
+      <span class="colophon__label">FIELDWORK — PORTFOLIO '26 · UTC+7</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .colophon {
+    background: var(--surface-inverse);
+  }
+  .colophon__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding-top: 88px;
+    padding-bottom: 56px;
+  }
+  .colophon__compass {
+    width: 30px;
+    height: 30px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .colophon__compass {
+      animation: compass-spin 22s linear infinite;
+      transform-origin: 50% 50%;
+    }
+  }
+  @keyframes compass-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .colophon__masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .colophon__section {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .colophon__label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-inverse-secondary);
+  }
+  .colophon__heading {
+    font-family: var(--font-display);
+    font-size: 54px;
+    line-height: 1.07;
+    color: var(--ink-inverse);
+    max-width: 860px;
+  }
+  .colophon__sub {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-inverse-secondary);
+    max-width: 660px;
+  }
+  .colophon__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 8px;
+  }
+  .colophon__btn-email {
+    font-size: 15px;
+    padding: 15px 28px;
+  }
+  .colophon__divider {
+    height: 1px;
+    background: #4A453F;
+  }
+  .colophon__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+  }
+  .colophon__key {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-inverse-secondary);
+  }
+  .colophon__key svg {
+    width: 13px;
+    height: 13px;
+  }
+  .colophon__foot {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  @media (max-width: 720px) {
+    .colophon__heading {
+      font-size: 34px;
+    }
+    .colophon__sub {
+      font-size: 16px;
+    }
+    .colophon__masthead,
+    .colophon__foot {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+</style>

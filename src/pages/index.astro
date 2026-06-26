@@ -1,0 +1,734 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Colophon from "../components/Colophon.astro";
+
+const projects = [
+  {
+    plate: "PLATE 01 — SYNETIC",
+    kicker: "01 / HEALTHCARE EMR · B2B SAAS",
+    title: "Synetic",
+    blurb:
+      "An electronic medical record built for the clinic where I work — designed around a SOAP backbone with specialty modules layered on top. My most current and most systemic work, built with an AI-augmented workflow.",
+    tags: ["Healthcare", "B2B SaaS", "AI-augmented", "Lead designer"],
+    coord: "06°17′S 106°43′E",
+    fig: "FIG. 01",
+    image: "/images/mockupsynetic.png",
+    href: "/work/synetic",
+    marker: "health",
+    reverse: false,
+  },
+  {
+    plate: "PLATE 02 — LILIST",
+    kicker: "02 / CONSUMER FINANCE · MOBILE",
+    title: "Lilist",
+    blurb:
+      "A shopping-list-and-expense app for Indonesian households. I shipped V1, watched three friends fail to use it, rebuilt it — then caught myself repeating the same mistake in the redesign and started over again.",
+    tags: ["Consumer", "Mobile", "Design system", "End-to-end"],
+    coord: "06°24′S 106°49′E",
+    fig: "FIG. 02",
+    image: "/images/Lilistv2mockup.png",
+    href: "/work/lilist",
+    marker: "consumer",
+    reverse: true,
+  },
+];
+---
+
+<Base title="Jihan Raihana — Product Designer">
+  <Nav />
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__backdrop" aria-hidden="true" data-parallax="0.06">
+      <span style="width:720px;height:720px;"></span>
+      <span style="width:600px;height:600px;"></span>
+      <span style="width:480px;height:480px;"></span>
+      <span style="width:360px;height:360px;"></span>
+      <span style="width:240px;height:240px;"></span>
+    </div>
+    <div class="wrap hero__inner">
+      <h1 class="hero__headline">
+        Product design,<br />
+        from the first <em>messy sketch</em><br />
+        to the <em>shipped screen.</em>
+      </h1>
+
+      <div class="hero__body">
+        <div class="hero__intro">
+          <p class="hero__dateline">FIELD NOTES — EST. 2024</p>
+          <p class="hero__subhead">
+            Self-taught product designer mapping unfamiliar territory. Six years
+            in visual design gave me the craft; building and shipping real
+            products taught me the rest. Healthcare tools, consumer apps, and
+            brand systems — usually as the only designer on a small team, end to
+            end.
+          </p>
+          <div class="hero__cta">
+            <a href="#work" class="btn btn-primary">Survey the work</a>
+            <a href="/about" class="link-arrow">Read my story →</a>
+          </div>
+        </div>
+
+        <!-- Peta wilayah (ilustrasi) -->
+        <div class="hero__mapcol">
+          <div class="map">
+            <span class="map__fig">FIG. 01 — THE TERRITORY</span>
+            <span class="map__contour" style="width:420px;height:250px;left:70px;top:35px;"></span>
+            <span class="map__contour" style="width:320px;height:190px;left:120px;top:65px;"></span>
+            <span class="map__contour" style="width:220px;height:132px;left:170px;top:94px;"></span>
+            <span class="map__contour" style="width:120px;height:72px;left:220px;top:124px;"></span>
+            <svg class="map__route" viewBox="0 0 560 320" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M105 100l155 110 170-105" pathLength="1" fill="none" stroke="var(--ink-secondary)" stroke-width="1.5" />
+            </svg>
+
+            <span class="map__ping" style="left:86px;top:81px;"></span>
+            <svg class="map__pt" style="left:95px;top:90px;" viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+            <span class="map__lbl" style="left:91px;top:116px;"><b>SYNETIC</b><i>HEALTHCARE</i></span>
+
+            <svg class="map__pt" style="left:250px;top:200px;" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+            <span class="map__lbl" style="left:246px;top:226px;"><b>LILIST</b><i>CONSUMER</i></span>
+
+            <svg class="map__pt" style="left:420px;top:95px;" viewBox="0 0 24 24" fill="none" stroke="var(--mark-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+            <span class="map__lbl" style="left:416px;top:121px;"><b>BASE CAMP</b><i>ENIGMA</i></span>
+
+            <span class="map__ping map__ping--lilist" style="left:241px;top:191px;"></span>
+            <span class="map__ping map__ping--base" style="left:411px;top:86px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORK ================= -->
+  <section class="work" id="work">
+    <div class="wrap work__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(01)</span><span class="masthead__t">SELECTED WORK — TWO TERRITORIES</span></span>
+        <span class="masthead__r">FIG. 02 – 03</span>
+      </div>
+
+      {projects.map((p) => (
+        <article class={`territory ${p.reverse ? "territory--reverse" : ""}`}>
+          <a href={p.href} class="plate" data-reveal style={`background-image:url('${p.image}')`}>
+            <span class="plate__mark plate__mark--tl"></span>
+            <span class="plate__mark plate__mark--tr"></span>
+            <span class="plate__mark plate__mark--bl"></span>
+            <span class="plate__mark plate__mark--br"></span>
+            <div class="plate__row">
+              <span class="plate__label">{p.plate}</span>
+            </div>
+            <div class="plate__row">
+              <span class="plate__meta">{p.coord}</span>
+              <span class="plate__meta">{p.fig}</span>
+            </div>
+          </a>
+
+          <div class="territory__text">
+            <div class="territory__meta">
+              {p.marker === "health" ? (
+                <svg class="marker" viewBox="0 0 14 14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="var(--mark-health)" /></svg>
+              ) : (
+                <svg class="marker" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--mark-consumer)" /></svg>
+              )}
+              <span class="territory__kicker">{p.kicker}</span>
+            </div>
+            <h2 class="territory__title">{p.title}</h2>
+            <p class="territory__blurb">{p.blurb}</p>
+            <div class="tags">
+              {p.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+            <a href={p.href} class="link-arrow">Enter territory →</a>
+          </div>
+        </article>
+      ))}
+
+      <div class="basecamp">
+        <svg class="marker" viewBox="0 0 24 24" fill="none" stroke="var(--mark-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+        <span>BASE CAMP — Enigma · brand &amp; visual craft, the clinic where Synetic was born → see About</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about">
+    <div class="wrap about__inner">
+      <div class="masthead">
+        <span class="masthead__l"><span class="masthead__num">(02)</span><span class="masthead__t">ABOUT — THE CARTOGRAPHER</span></span>
+        <span class="masthead__r">FIELD NOTE</span>
+      </div>
+
+      <div class="about__row">
+        <div class="specimen">
+          <span class="territory__kicker">PLATE 01 — THE CARTOGRAPHER</span>
+          <div class="specimen__photo" style="background-image:url('/images/hero-profile.png')"></div>
+          <div class="specimen__caption">
+            <span class="mono">JIHAN RAIHANA</span>
+            <span class="mono">TANGERANG SELATAN</span>
+          </div>
+          <dl class="log">
+            <div><dt>BASED IN</dt><dd>Tangerang Selatan, ID · GMT+7</dd></div>
+            <div><dt>STUDIO</dt><dd>Sirkala — with my husband</dd></div>
+            <div><dt>BACKGROUND</dt><dd>Math education · 6 yrs visual design</dd></div>
+            <div><dt>WORKFLOW</dt><dd>AI-augmented · Pencil, Figma, Claude</dd></div>
+          </dl>
+        </div>
+
+        <div class="narrative">
+          <p class="hero__dateline">FIELD NOTE — 2024 → PRESENT</p>
+          <h2 class="narrative__heading">I think in systems before I think in screens.</h2>
+          <p class="narrative__p">
+            I started in mathematics education, spent six years as a graphic
+            designer, then taught myself product design by building real things.
+            After two years away from work raising my son, I came back to tech —
+            and design is where the analytical and the visual finally met.
+          </p>
+          <p class="narrative__p">
+            Today I co-run Sirkala, a two-person studio, with my husband — he
+            engineers, I design. We ship small, honest products one at a time.
+          </p>
+          <a href="/about" class="link-arrow">Read the full story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Colophon />
+</Base>
+
+<style>
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .hero__backdrop {
+    position: absolute;
+    top: -150px;
+    right: -130px;
+    width: 720px;
+    height: 720px;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero__backdrop span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--contour);
+    border-radius: 50%;
+  }
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 44px;
+    padding-bottom: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+  .hero__headline {
+    font-family: var(--font-display);
+    font-size: 72px;
+    line-height: 1.04;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .hero__headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero__body {
+    display: flex;
+    gap: 64px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .hero__intro {
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .hero__dateline {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .hero__subhead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+  .hero__cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- PETA WILAYAH ---------- */
+  .hero__mapcol {
+    flex-shrink: 0;
+  }
+  .map {
+    position: relative;
+    width: 560px;
+    height: 320px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .map__fig {
+    position: absolute;
+    left: 18px;
+    top: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--ink-secondary);
+    z-index: 5;
+  }
+  .map__contour {
+    position: absolute;
+    border: 1px solid var(--contour);
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+  .map__route {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 560px;
+    height: 320px;
+    opacity: 0.5;
+  }
+  .map__ping {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid var(--mark-health);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  .map__ping--lilist {
+    border-color: var(--mark-consumer);
+  }
+  .map__ping--base {
+    border-color: var(--mark-brand);
+  }
+  .map__pt {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 8;
+  }
+  .map__lbl {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 9;
+  }
+  .map__lbl b {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+  }
+  .map__lbl i {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-style: normal;
+    letter-spacing: 0.05em;
+    color: var(--ink-secondary);
+  }
+
+  /* Titik peta membesar halus saat hover */
+  .map__pt {
+    transition: transform 0.2s ease;
+  }
+  .map__pt:hover {
+    transform: scale(1.25);
+  }
+
+  /* Animasi: rute menggambar sendiri + titik muncul berurutan */
+  @media (prefers-reduced-motion: no-preference) {
+    .map__route path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+    .map.is-in .map__route path {
+      transition: stroke-dashoffset 1s ease-out 0.15s;
+      stroke-dashoffset: 0;
+    }
+    .map__pt,
+    .map__lbl {
+      opacity: 0;
+      transform: scale(0.5);
+      transform-origin: center;
+      transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+    .map.is-in .map__pt,
+    .map.is-in .map__lbl {
+      opacity: 1;
+      transform: none;
+    }
+    /* Titik aktif (Synetic) berdenyut seperti radar */
+    .map__ping {
+      opacity: 0;
+    }
+    .map.is-in .map__ping {
+      transform-origin: center;
+      animation: radar-ping 3.2s ease-out infinite 1.3s;
+    }
+    .map.is-in .map__ping--lilist {
+      animation-delay: 2.4s;
+    }
+    .map.is-in .map__ping--base {
+      animation-delay: 3.5s;
+    }
+    @keyframes radar-ping {
+      0% { opacity: 0; transform: scale(0.5); }
+      12% { opacity: 0.6; }
+      100% { opacity: 0; transform: scale(1.85); }
+    }
+    .map.is-in .map__pt:nth-child(8) { transition-delay: 0.55s; }
+    .map.is-in .map__lbl:nth-child(9) { transition-delay: 0.65s; }
+    .map.is-in .map__pt:nth-child(10) { transition-delay: 0.75s; }
+    .map.is-in .map__lbl:nth-child(11) { transition-delay: 0.85s; }
+    .map.is-in .map__pt:nth-child(12) { transition-delay: 0.95s; }
+    .map.is-in .map__lbl:nth-child(13) { transition-delay: 1.05s; }
+    /* hover tetap responsif walau sudah muncul */
+    .map.is-in .map__pt:hover {
+      transition: transform 0.2s ease;
+      transform: scale(1.25);
+    }
+  }
+
+  /* ---------- MASTHEAD (judul seksi) ---------- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .masthead__l {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .masthead__num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .masthead__t,
+  .masthead__r {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--ink-secondary);
+  }
+
+  /* ---------- WORK ---------- */
+  .work {
+    background: var(--surface);
+  }
+  .work__inner {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+  .territory {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+  }
+  .territory--reverse {
+    flex-direction: row-reverse;
+  }
+  .plate {
+    position: relative;
+    flex-shrink: 0;
+    width: 560px;
+    height: 460px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    box-shadow: 0 12px 34px rgba(45, 41, 38, 0.13);
+    overflow: hidden;
+  }
+
+  /* Tanda registrasi di sudut plate (kesan "plat foto/peta") */
+  .plate__mark {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .plate__mark--tl {
+    top: 12px;
+    left: 12px;
+    border-top: 1.5px solid var(--accent);
+    border-left: 1.5px solid var(--accent);
+    transform-origin: top left;
+  }
+  .plate__mark--tr {
+    top: 12px;
+    right: 12px;
+    border-top: 1.5px solid var(--accent);
+    border-right: 1.5px solid var(--accent);
+    transform-origin: top right;
+  }
+  .plate__mark--bl {
+    bottom: 12px;
+    left: 12px;
+    border-bottom: 1.5px solid var(--accent);
+    border-left: 1.5px solid var(--accent);
+    transform-origin: bottom left;
+  }
+  .plate__mark--br {
+    bottom: 12px;
+    right: 12px;
+    border-bottom: 1.5px solid var(--accent);
+    border-right: 1.5px solid var(--accent);
+    transform-origin: bottom right;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .plate__mark {
+      opacity: 0;
+      transform: scale(0.2);
+      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    }
+    .plate.is-in .plate__mark {
+      opacity: 1;
+      transform: none;
+    }
+    .plate.is-in .plate__mark--tl { transition-delay: 0.15s; }
+    .plate.is-in .plate__mark--tr { transition-delay: 0.25s; }
+    .plate.is-in .plate__mark--br { transition-delay: 0.35s; }
+    .plate.is-in .plate__mark--bl { transition-delay: 0.45s; }
+  }
+
+  .plate__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .plate__label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .plate__meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-secondary);
+  }
+  .territory__text {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .territory__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .marker {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+  .territory__kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+  }
+  .territory__title {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .territory__blurb {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    padding: 6px 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-secondary);
+  }
+  .basecamp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border-subtle);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-secondary);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    background: var(--surface-raised);
+  }
+  .about__inner {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .about__row {
+    display: flex;
+    gap: 72px;
+    align-items: flex-start;
+  }
+  .specimen {
+    width: 360px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .specimen__photo {
+    width: 100%;
+    height: 430px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(45, 41, 38, 0.11);
+  }
+  .specimen__caption {
+    display: flex;
+    justify-content: space-between;
+  }
+  .specimen__caption .mono {
+    font-size: 11px;
+  }
+  .log {
+    margin-top: 12px;
+  }
+  .log div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .log dt {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--ink-secondary);
+  }
+  .log dd {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .narrative {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .narrative__heading {
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1.14;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .narrative__p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+
+  /* ================= RESPONSIVE (HP & tablet) ================= */
+  @media (max-width: 1024px) {
+    .hero__body {
+      flex-direction: column;
+    }
+    .hero__mapcol {
+      align-self: center;
+    }
+    .about__row {
+      flex-direction: column;
+    }
+    .specimen {
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .territory,
+    .territory--reverse {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .plate {
+      width: 100%;
+      height: 360px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero__headline {
+      font-size: 44px;
+    }
+    .territory__title {
+      font-size: 32px;
+    }
+    .narrative__heading {
+      font-size: 28px;
+    }
+    .map {
+      transform: scale(0.62);
+      transform-origin: top center;
+      margin-bottom: -122px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .hero__headline {
+      font-size: 36px;
+    }
+  }
+</style>
