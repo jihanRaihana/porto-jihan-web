@@ -299,8 +299,8 @@ const marginalia = [
                 <span class="gcard__mark">◇</span>
                 <span class="gcard__kind">VISUAL</span>
               </div>
-              <div class="gcard__media gcard__media--img" style="background-image:url('/images/enigma-print.gif')"></div>
-              <div class="gcard__caption">PRINT — BROCHURE · VOUCHER · BANNER · MENU</div>
+              <div class="gcard__media gcard__media--img" style="background-image:url('/images/print-storefront.png')"></div>
+              <div class="gcard__caption">PRINT — STOREFRONT SIGNAGE</div>
             </div>
 
             <div class="gcard">
@@ -1151,6 +1151,12 @@ const marginalia = [
     .cards {
       flex-direction: column;
     }
+    /* Saat menumpuk vertikal, kartu jangan pakai flex:1 (bikin tinggi kolaps) */
+    .gcard,
+    .card,
+    .subcard {
+      flex: none;
+    }
   }
 
   @media (max-width: 720px) {
@@ -1171,8 +1177,17 @@ const marginalia = [
     .wp__year {
       width: auto;
     }
+    /* Metrics: 3 kolom rapi (jangan wrap jadi 2+1) */
     .stats {
-      gap: 28px;
+      gap: 14px;
+      flex-wrap: nowrap;
+    }
+    .stat {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .stat__n {
+      font-size: 33px;
     }
   }
 
