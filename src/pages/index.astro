@@ -532,14 +532,22 @@ const projects = [
     justify-content: space-between;
     align-items: center;
   }
-  .plate__label {
+  .plate__label,
+  .plate__meta {
     font-family: var(--font-mono);
+    /* chip frosted: agar label/koordinat tetap terbaca di atas gambar mockup */
+    background: rgba(245, 242, 233, 0.82);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    padding: 4px 9px;
+    border-radius: 5px;
+  }
+  .plate__label {
     font-size: 12px;
     letter-spacing: 0.08em;
     color: var(--accent);
   }
   .plate__meta {
-    font-family: var(--font-mono);
     font-size: 11px;
     color: var(--ink-secondary);
   }
