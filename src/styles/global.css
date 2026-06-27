@@ -149,6 +149,13 @@ a {
   .wrap {
     padding-inline: 24px;
   }
+  /* Kontur hiasan disembunyikan di HP — di layar sempit ia menumpuk di
+     belakang judul dan terlihat berantakan. */
+  .hero__backdrop,
+  .header__contour,
+  .th__contour {
+    display: none;
+  }
 }
 
 /* =========================================================
