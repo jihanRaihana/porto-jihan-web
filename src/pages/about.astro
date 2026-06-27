@@ -299,11 +299,8 @@ const marginalia = [
                 <span class="gcard__mark">◇</span>
                 <span class="gcard__kind">VISUAL</span>
               </div>
-              <div class="gcard__media gcard__media--ph">
-                <svg class="gcard__phicon" viewBox="0 0 24 24" fill="none" stroke="#B8AF9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
-                <span class="gcard__phtext">materi cetak — menyusul</span>
-              </div>
-              <div class="gcard__caption">PRINT IN-CONTEXT</div>
+              <div class="gcard__media gcard__media--img" style="background-image:url('/images/print-storefront.png')"></div>
+              <div class="gcard__caption">PRINT — STOREFRONT SIGNAGE</div>
             </div>
 
             <div class="gcard">
@@ -311,14 +308,13 @@ const marginalia = [
                 <span class="gcard__mark">◇</span>
                 <span class="gcard__kind">VISUAL</span>
               </div>
-              <div class="gcard__media gcard__media--ph">
-                <svg class="gcard__phicon" viewBox="0 0 24 24" fill="none" stroke="#B8AF9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                <div class="gcard__handles">
-                  <a href="https://instagram.com/enigmawellness.id" target="_blank" rel="noopener">@enigmawellness.id ↗</a>
-                  <a href="https://instagram.com/enigmaskin.id" target="_blank" rel="noopener">@enigmaskin.id ↗</a>
-                </div>
+              <div class="gcard__media gcard__media--igpair">
+                <div class="igshot" style="background-image:url('/images/ig-enigma-wellness.png')"></div>
+                <div class="igshot" style="background-image:url('/images/ig-enigma-skin.png')"></div>
               </div>
-              <div class="gcard__caption">INSTAGRAM — CONTENT I PRODUCE</div>
+              <div class="gcard__caption gcard__caption--ig">
+                <a href="https://instagram.com/enigmawellness.id" target="_blank" rel="noopener">@enigmawellness.id</a> · <a href="https://instagram.com/enigmaskin.id" target="_blank" rel="noopener">@enigmaskin.id</a>
+              </div>
             </div>
           </div>
 
@@ -943,6 +939,32 @@ const marginalia = [
     font-size: 11px;
     letter-spacing: 0.08em;
     color: var(--ink-secondary);
+  }
+  .gcard__caption--ig a {
+    color: var(--accent);
+  }
+  .gcard__caption--ig a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .gcard__media--img {
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .gcard__media--igpair {
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+  }
+  .igshot {
+    flex: 1 1 0;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+  }
+  .igshot + .igshot {
+    border-left: 1px solid var(--border-subtle);
   }
 
   /* ---------- RAIL-BODY (Looking / How I work) ---------- */
