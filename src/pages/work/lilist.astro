@@ -158,22 +158,30 @@ import Colophon from "../../components/Colophon.astro";
             for lightweight daily apps we could realistically finish.
           </p>
           <p class="main__p">
-            Lilist almost fell into the same trap. Its original idea was bigger than it looked — a
-            price-comparison app: scan an item, compare prices across stores, find the cheapest
-            nearby. It looked smart, but it needed constantly-changing price data and real retail
-            partnerships — too heavy for two people. So we shelved it.
+            Lilist almost fell into the same trap — its first idea was far bigger than it looked.
+            That's where I learned the move that mattered:
           </p>
-          <p class="main__p">
-            The unlock wasn't dropping the problem — people still overspend on groceries. It was
-            changing the <em>solution</em>. Instead of “where's the cheapest store?” we asked:
-            “how much are people actually spending — and how do we help them stay aware and in
-            control?” That reframe turned an unbuildable idea into a simple
-            shopping-list-and-spending app we could actually finish.
-          </p>
-          <blockquote class="pullquote">
-            <p class="pullquote__q">“Change the solution, not the problem.”</p>
-            <span class="pullquote__a">— THE PRINCIPLE THAT MADE LILIST SHIPPABLE</span>
-          </blockquote>
+          <div class="reframe">
+            <span class="reframe__title">“Change the solution, not the problem.”</span>
+            <p class="reframe__problem">
+              The problem never changed — people overspend on groceries. Only the solution did.
+            </p>
+            <div class="reframe__cols">
+              <div class="reframe__col reframe__col--shelved">
+                <span class="reframe__tag">FIRST IDEA — SHELVED</span>
+                <span class="reframe__h">Price-comparison app</span>
+                <p class="reframe__d">Scan an item · compare prices across stores · find the cheapest nearby.</p>
+                <span class="reframe__why reframe__why--no">✕ Needs live price data + retail partnerships — too heavy for two.</span>
+              </div>
+              <span class="reframe__arrow" aria-hidden="true">→</span>
+              <div class="reframe__col reframe__col--built">
+                <span class="reframe__tag reframe__tag--accent">WHAT WE BUILT</span>
+                <span class="reframe__h">Shopping list + spending</span>
+                <p class="reframe__d">Plan ahead or just record · track spending · stay aware and in control.</p>
+                <span class="reframe__why reframe__why--ok">✓ Simple enough for two people to actually finish.</span>
+              </div>
+            </div>
+          </div>
           <div class="fieldnote">
             That conviction — that we could shrink an out-of-reach idea into something shippable —
             is exactly why we paused JAKA and bet on Lilist. It became the one we could actually
@@ -894,6 +902,104 @@ import Colophon from "../../components/Colophon.astro";
     line-height: 1.63;
     font-style: italic;
     color: var(--ink);
+  }
+
+  /* reframe diagram (02) */
+  .reframe {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    background: var(--surface-raised);
+  }
+  .reframe__title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .reframe__problem {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+  .reframe__cols {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .reframe__col {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 16px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+  .reframe__col--built {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .reframe__tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--ink-secondary);
+  }
+  .reframe__tag--accent {
+    color: var(--accent);
+  }
+  .reframe__h {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .reframe__col--shelved .reframe__h {
+    text-decoration: line-through;
+    color: var(--ink-secondary);
+  }
+  .reframe__d {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-secondary);
+  }
+  .reframe__why {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: auto;
+  }
+  .reframe__why--no {
+    color: var(--mark-health);
+  }
+  .reframe__why--ok {
+    color: var(--mark-consumer);
+  }
+  .reframe__arrow {
+    align-self: center;
+    font-size: 22px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  @media (max-width: 720px) {
+    .reframe__cols {
+      flex-direction: column;
+    }
+    .reframe__col {
+      flex: none;
+    }
+    .reframe__arrow {
+      transform: rotate(90deg);
+    }
   }
 
   /* V0 figure */
