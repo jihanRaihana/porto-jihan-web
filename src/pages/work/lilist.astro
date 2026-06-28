@@ -532,6 +532,28 @@ import Colophon from "../../components/Colophon.astro";
               alone — including when your “solution” is just your blind spot in disguise.
             </p>
           </div>
+          <div class="shift">
+            <span class="shift__eyebrow">THE SHIFT — SAME PROBLEM, NEW OPERATING SYSTEM</span>
+            <div class="shift__row">
+              <div class="shift__col">
+                <span class="shift__k">BEFORE · LILIST V1</span>
+                <span class="shift__v">~6 months</span>
+                <span class="shift__d">the two of us — designed in Figma, tested, shipped to the Play Store</span>
+              </div>
+              <span class="shift__arrow" aria-hidden="true">→</span>
+              <div class="shift__col">
+                <span class="shift__k">AFTER · AI-AUGMENTED (PENCIL + CLAUDE)</span>
+                <span class="shift__v">~3 weeks</span>
+                <span class="shift__d">V2 redesign — 2 weeks to design, ~1 to build</span>
+              </div>
+            </div>
+            <p class="shift__note">
+              It's a redesign, not a from-scratch build — but even so, our design-to-dev cycle
+              went from months to weeks. The same shift let us reach MVP1 on Synetic, a full
+              healthcare EMR, in the time Lilist V1 alone once took.
+            </p>
+          </div>
+
           <p class="closing">
             Lilist isn't my biggest project. It's the one that turned me from a graphic designer
             into a product designer.
@@ -1366,6 +1388,80 @@ import Colophon from "../../components/Colophon.astro";
     font-size: 26px;
     line-height: 1.27;
     color: var(--ink);
+  }
+
+  /* ---------- THE SHIFT (callout) ---------- */
+  .shift {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 8px 0 4px;
+    padding: 28px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    background: var(--surface);
+  }
+  .shift__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+  }
+  .shift__row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .shift__col {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .shift__k {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--ink-secondary);
+  }
+  .shift__v {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .shift__d {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-secondary);
+  }
+  .shift__arrow {
+    font-size: 24px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .shift__note {
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--ink-secondary);
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  @media (max-width: 720px) {
+    .shift__row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+    }
+    .shift__col {
+      flex: none;
+    }
+    .shift__arrow {
+      transform: rotate(90deg);
+      align-self: center;
+    }
   }
 
   /* ---------- NEXT TERRITORY ---------- */
