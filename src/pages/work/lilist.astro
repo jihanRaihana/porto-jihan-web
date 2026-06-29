@@ -221,6 +221,33 @@ import Colophon from "../../components/Colophon.astro";
             wireframes, a design system, hand-off, sprint planning in Jira, Play Store submission,
             and the strange anticlimax of watching your app go live.
           </p>
+
+          <span class="mono-accent">DESIGNED IN FIGMA</span>
+          <figure class="figma">
+            <img
+              class="figma__img"
+              src="/images/lilist-v1-figma.png"
+              alt="Lilist V1 designed in Figma — the full app organized into pages and flows"
+              loading="lazy"
+            />
+            <figcaption class="figma__cap">
+              The full V1 app in Figma — organized into pages and flows: Home, Plan, Report,
+              Profile, the receipt-scan feature, plus onboarding and login.
+            </figcaption>
+          </figure>
+          <figure class="figma">
+            <img
+              class="figma__img"
+              src="/images/lilist-v1-designsystem.png"
+              alt="Lilist V1 design system in Figma — color tokens, a Material 3 type scale, and a component library"
+              loading="lazy"
+            />
+            <figcaption class="figma__cap">
+              A token-based design system — color tokens, a Material 3 type scale (baseline +
+              emphasized), and a reusable component library: navigation, cards, charts, search.
+            </figcaption>
+          </figure>
+
           <div class="fieldnote">
             I was proud of V1. I was about to find out it didn't work.
           </div>
@@ -1030,6 +1057,28 @@ import Colophon from "../../components/Colophon.astro";
     font-size: 15px;
     line-height: 1.53;
     font-style: italic;
+    color: var(--ink-secondary);
+  }
+
+  /* Figma figures (V1 file + design system) */
+  .figma {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .figma__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(45, 41, 38, 0.12);
+  }
+  .figma__cap {
+    font-size: 13px;
+    line-height: 1.5;
     color: var(--ink-secondary);
   }
 
