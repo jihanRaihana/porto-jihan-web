@@ -35,7 +35,10 @@ const projects = [
 ];
 ---
 
-<Base title="Jihan Raihana — Product Designer">
+<Base
+  title="Jihan Raihana — Product Designer"
+  description="Product designer in Indonesia. I ship end-to-end — a healthcare EMR in testing at a real clinic, a consumer app on the Play Store."
+>
   <Nav />
 
   <!-- ================= HERO ================= -->
@@ -64,7 +67,7 @@ const projects = [
             small team, end to end.
           </p>
           <div class="hero__cta">
-            <a href="#work" class="btn btn-primary">Survey the work</a>
+            <a href="#work" class="btn btn-primary">View selected work</a>
             <a href="/about" class="link-arrow">Read my story →</a>
           </div>
         </div>
@@ -137,7 +140,7 @@ const projects = [
             <div class="tags">
               {p.tags.map((t) => <span class="tag">{t}</span>)}
             </div>
-            <a href={p.href} class="link-arrow">Enter territory →</a>
+            <a href={p.href} class="link-arrow">View case study →</a>
           </div>
         </article>
       ))}
